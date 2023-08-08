@@ -1,0 +1,21 @@
+﻿@model JDash.MvcDemo.Areas.Dashlets.Models.JVectorMapModel
+
+<div>
+    @using (Ajax.BeginForm(new AjaxOptions() { }))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Set Map Options</legend>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MapId)
+                @Html.DropDownListFor(m => m.MapId, Model.MapTypes, "Select a map", new { @class = "form-control templateList" })
+                @Html.ValidationMessageFor(m => m.MapId)
+            </div>            
+        </fieldset>
+    }
+
+
+</div>

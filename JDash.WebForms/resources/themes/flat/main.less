@@ -1,0 +1,515 @@
+@import "./css/font-awesome.less";
+@import "./css/animate.less";
+
+@color-w: #fff;
+@color-b: #222;
+
+@border-width: 1px;
+@border-radius: 3px;
+@border-color-w: #dbdbdb;
+@border-color-b: #080808;
+
+@shadowsuccess-color: #666666;
+
+/* Mixins */
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @color: grey) {
+  -webkit-box-shadow: @x-axis @y-axis @blur @blur @color;
+  -moz-box-shadow: @x-axis @y-axis @blur @blur @color;
+  box-shadow: @x-axis @y-axis @blur @blur @color;
+}
+
+.transition(@properties: background-color, @duration: 0.3s, @timing: linear) {
+    -moz-transition: @properties @duration @timing;
+    -o-transition: @properties @duration @timing;
+    -webkit-transition: @properties @duration @timing;
+    transition: @properties @duration @timing;
+}
+
+
+/* Module Node */
+
+.d-module-item {
+  .transition(border-color);
+  //.transition(background-color, );
+}
+
+.d-module-item:hover, .d-module-item.dragNode  {
+
+}
+
+
+
+/* Dashlet */
+
+.d-dashlet-pane {
+  border-radius: @border-radius;
+  margin-bottom: 20px;
+  background-color: @color-w;
+  //.transition(background-color);
+  //.transition(box-shadow);
+  
+}
+
+
+.dashlet-b.d-dashlet-pane {
+  background-color: @color-b;
+
+}
+
+.d-dashlet-container {
+  border-top: 1px solid @border-color-w;
+  .transition(border-color);
+}
+
+.dashlet-w .d-dashlet-pane:hover {
+  .d-header, .d-dashlet-body, .d-dashlet-container  {
+    border-color: darken(@border-color-w, 5%);
+  }
+}
+
+.dashlet-b .d-dashlet-container {
+  border-top: 1px solid @border-color-b;
+}
+
+.dashlet-b .d-dashlet-pane:hover {
+  .d-header, .d-dashlet-body, .d-dashlet-container  {
+    border-color: darken(@border-color-b, 5%);
+  }
+}
+
+
+
+.d-dashlet-body {
+  border-bottom-left-radius: @border-radius;
+  border-bottom-right-radius: @border-radius;
+  border: 1px solid @border-color-w;
+  border-top: 0;
+  padding: 7px;
+  .transition(border-color);
+}
+
+.dashlet-b .d-dashlet-body {
+  border: 1px solid @border-color-b;
+  border-top: 0;
+}
+
+.d-dashlet-pane:hover {
+  .d-commands {
+    display: block;
+  }
+}
+
+
+.d-editor-footer {
+  margin-bottom: 14px;
+  padding-left: 7px;
+}
+
+
+/* Dashboard */
+
+.d-dashboard-content
+{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.d-dashboard-footer{ 
+    clear:both;
+}
+
+
+/* Common */
+
+
+.d-header
+{
+  border: @border-width solid @border-color-w;
+  border-bottom: 0;
+  border-radius: @border-radius @border-radius 0px 0px;
+  .transition(border-color);
+}
+
+.dashlet-b .d-header
+{
+  border: @border-width solid @border-color-b;
+  border-bottom: 0;
+  background-color: @color-b;
+}
+
+
+.d-title
+{
+  font-size: 15px;  
+  overflow: hidden;
+  padding: 10px 7px 2px 7px;
+  text-overflow: ellipsis;
+  text-shadow: #eee 0 1px;
+  white-space: nowrap;
+  font-family: arial,sans-serif;
+  color: #333;
+}
+
+.dashlet-b .d-title, .dashlet-b .d-content {
+  color: #ddd;
+}
+
+.d-drop-indicator
+{
+    border: 3px dashed;
+    margin-bottom: 20px !important;
+    opacity: 0.8;
+}
+
+.dashboard-w .d-drop-indicator
+{
+    border-color: darken(@color-w, 10%);
+}
+
+.dashboard-b .d-drop-indicator
+{
+    border-color: darken(@color-b, 10%);
+}
+
+.d-commands 
+{
+  border: 0;
+  border-top-right-radius: @border-radius;
+  height: 28px;
+  display: none;
+  float: right;
+  a {
+    margin-top: 10px;
+    overflow: hidden;
+    width: 30px;
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    cursor: pointer;
+	font-size:14px;
+	line-height:1;
+    }
+	a:hover {
+
+	}
+}
+
+.d-touch .d-commands {
+  display: block;
+}
+
+.d-busy 
+{
+  .d-dashlet-title {
+      background-image: url("images/ui-icon-busy.gif");
+      background-repeat: no-repeat;
+      background-position: 4px 15px;
+      padding-left: 24px;
+  }
+}
+
+
+
+.d-body {
+    clear:both;
+}
+
+.d-content
+{
+    padding: 7px;
+    overflow:hidden;
+}
+
+
+
+.d-window-header
+{
+    border-radius: 0px;
+}
+
+.d-mask {
+    background-color: #3366CC;
+    opacity: 0.01;
+    position: absolute;
+    z-index: 10000;
+}
+
+.d-overlay
+{
+    height: 100%;
+    background: #666;
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0.1;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+}
+
+:focus
+{
+    outline: 0;
+}
+
+.d-btn
+{
+    cursor: pointer;
+}
+
+
+
+
+/* Buttons */
+
+.d-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: @border-radius;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.d-btn:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.d-btn:hover,
+.d-btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.d-btn:active,
+.d-btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.d-btn.disabled,
+.d-btn[disabled],
+fieldset[disabled] .d-btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.d-btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.d-btn-default:hover,
+.d-btn-default:focus,
+.d-btn-default:active,
+.d-btn-default.active,
+.open .dropdown-toggle.d-btn-default {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+.d-btn-default:active,
+.d-btn-default.active,
+.open .dropdown-toggle.d-btn-default {
+  background-image: none;
+}
+.d-btn-default.disabled,
+.d-btn-default[disabled],
+fieldset[disabled] .d-btn-default,
+.d-btn-default.disabled:hover,
+.d-btn-default[disabled]:hover,
+fieldset[disabled] .d-btn-default:hover,
+.d-btn-default.disabled:focus,
+.d-btn-default[disabled]:focus,
+fieldset[disabled] .d-btn-default:focus,
+.d-btn-default.disabled:active,
+.d-btn-default[disabled]:active,
+fieldset[disabled] .d-btn-default:active,
+.d-btn-default.disabled.active,
+.d-btn-default[disabled].active,
+fieldset[disabled] .d-btn-default.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.d-btn-primary {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.d-btn-primary:hover,
+.d-btn-primary:focus,
+.d-btn-primary:active,
+.d-btn-primary.active,
+.open .dropdown-toggle.d-btn-primary {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.d-btn-primary:active,
+.d-btn-primary.active,
+.open .dropdown-toggle.d-btn-primary {
+  background-image: none;
+}
+.d-btn-primary.disabled,
+.d-btn-primary[disabled],
+fieldset[disabled] .d-btn-primary,
+.d-btn-primary.disabled:hover,
+.d-btn-primary[disabled]:hover,
+fieldset[disabled] .d-btn-primary:hover,
+.d-btn-primary.disabled:focus,
+.d-btn-primary[disabled]:focus,
+fieldset[disabled] .d-btn-primary:focus,
+.d-btn-primary.disabled:active,
+.d-btn-primary[disabled]:active,
+fieldset[disabled] .d-btn-primary:active,
+.d-btn-primary.disabled.active,
+.d-btn-primary[disabled].active,
+fieldset[disabled] .d-btn-primary.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+
+
+
+
+
+
+/* Icons */
+
+.d-icon-none
+{
+    display: none;
+    background-image: none;
+}
+
+.d-editor-window
+{
+    background: @color-w;
+    text-align: left;
+    position: fixed;
+    z-index: 1051;
+    left: 50%;
+    top: 15%;
+    -webkit-box-shadow: 0px 0px 30px rgba(58, 60, 60, 1);
+    -moz-box-shadow: 0px 0px 30px rgba(58, 60, 60, 1);
+    box-shadow: 0px 0px 30px rgba(58, 60, 60, 1);
+    border-radius: @border-radius @border-radius @border-radius @border-radius;
+    border: 5px solid #eee;
+}
+
+.dashlet-b .d-editor-window {
+  border-color: darken(@color-b, 10%);
+}
+
+.dashlet-b .d-editor-window {
+  background-color: @color-b;
+}
+
+.d-editor-window .d-window-header
+{
+    cursor: default;
+}
+
+.d-editor .d-editor-footer, .d-editor-window .d-editor-footer
+{
+    padding: 7px;
+}
+
+.d-editor-window .d-header {
+  border: none;
+}
+
+.d-editor-window .d-editor-footer
+{
+  margin-bottom: 0px !important;    
+  background-color: #eee;
+  padding-top: 12px;
+}
+
+.dashlet-b .d-editor-window .d-editor-footer {
+  background-color: darken(@color-b, 10%);
+}
+
+.d-editor-footer a.d-btn
+{
+    padding-right: 7px;
+    color: #333333;
+    text-align: right;
+}
+
+.d-editor-footer a.d-btn i
+{
+    display: none;
+}
+
+
+/*  Icons */
+
+.d-icon {
+  font-size: 1.3em;
+  color: darken(@border-color-w, 25%);
+}
+
+
+.d-icon:hover {
+  color: darken(@border-color-w, 50%);
+
+}
+
+.d-icon-clone:before {
+  content: "\f079";
+}
+
+.d-icon-edit:before {
+  content: "\f085";
+}
+
+.d-icon-maximize:before {
+  content: "\f124";;
+}
+
+.d-icon-collapse:before, .d-icon-restore:before {
+  content: "\f063";
+}
+
+.d-icon-remove:before {
+  content: "\f00d";
+}
+
+/* Theme Style List */
+
+.d-styles-list a
+{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin-right: 2px;
+    cursor: pointer;
+    border-radius:4px;
+}
+
+.d-styles-list a.usetheme
+{
+    margin-right: 6px;
+    border-radius:0px;
+}

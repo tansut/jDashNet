@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JDash</name>
+    </assembly>
+    <members>
+        <member name="T:JDash.NamespaceDoc">
+            <summary>
+            Contains core JDash.Net classes.
+            </summary>
+        </member>
+        <member name="T:JDash.UserInfoEventArgs">
+            <summary>
+            Use to set a custom username for JDash.Net. See <seealso cref="E:JDash.JDashManager.CurrentUserCallback"/> event
+            for more information.
+            </summary>
+        </member>
+        <member name="P:JDash.UserInfoEventArgs.Username">
+            <summary>
+            Represents the username. Set a value to change username value.
+            </summary>
+        </member>
+        <member name="T:JDash.JDashManager">
+            <summary>
+            Static class to manage providers and JDash.Net wide settings.
+            </summary>
+        </member>
+        <member name="E:JDash.JDashManager.CurrentUserCallback">
+            <summary>
+            By default JDash.Net uses username value retreived using current thread. To change this
+            behaviour set an event handler and use <see cref="T:JDash.UserInfoEventArgs"/> to change username value.
+            </summary>
+        </member>
+        <member name="P:JDash.JDashManager.Providers">
+            <summary>
+            Returns a list of providers registered using web.config.
+            </summary>
+        </member>
+        <member name="P:JDash.JDashManager.Provider">
+            <summary>
+            Returns a reference to the current provider.
+            </summary>
+        </member>
+        <member name="M:JDash.JDashManager.ChangeProvider(System.String)">
+            <summary>
+            Changes current provider. Use JDash.JDashManager.Provider property
+            to get a reference to the current provider.
+            </summary>
+            <param name="providerName">Name of provider.</param>
+        </member>
+        <member name="P:JDash.JDashManager.CurrentUser">
+            <summary>
+            Returns id of current user. By default Thread.CurrentPrincipal.Identity.Name property is used to get current user name.
+            This can be changed by setting a handler using <seealso cref="E:JDash.JDashManager.CurrentUserCallback"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

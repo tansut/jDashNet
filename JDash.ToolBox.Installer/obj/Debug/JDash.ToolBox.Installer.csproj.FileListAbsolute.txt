@@ -1,0 +1,10 @@
+E:\temp\PreDeploy\JDash.ToolBox.Installer.exe.config
+E:\temp\PreDeploy\JDash.ToolBox.Installer.exe
+E:\temp\PreDeploy\JDash.ToolBox.Installer.pdb
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.csprojResolveAssemblyReference.cache
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.csproj.ResolveComReference.cache
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.Form1.resources
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.Properties.Resources.resources
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.csproj.GenerateResource.Cache
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.exe
+E:\temp\jdash\JDash.ToolBox.Installer\obj\Debug\JDash.ToolBox.Installer.pdb

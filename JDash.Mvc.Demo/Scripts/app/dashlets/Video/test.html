@@ -1,0 +1,25 @@
+<html>
+<script>
+function test()
+{
+      var video = document.createElement("video");
+	                video.setAttribute("id", "video");
+	                //video.setAttribute("height", this.context.config.get("width"));
+	                //video.setAttribute("width", this.context.config.get("height"));
+	                video.setAttribute("height", "320");
+	                video.setAttribute("width", "320");
+	                video.setAttribute("controls", "controls");
+
+	                //domAttr.set(video, 'style', "height:" + fheight + ";" + "width:" + fwidth + ";");
+	                var source = document.createElement("source");
+	                source.setAttribute("src", "http://flarevideo.com/flarevideo/examples/volcano.mp4");
+	                source.setAttribute("type", "video/mp4");
+	                video.appendChild(source);
+					document.body.appendChild(video);
+				   }
+    </script>
+	
+<body onload="test()">
+
+</body>
+</html>

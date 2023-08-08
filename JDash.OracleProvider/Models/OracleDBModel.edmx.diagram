@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="36a77d6ef40d473aa7d784fbad38e220" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.DASHBOARD" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DASHLET" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DASHLETMODULE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ENTITYAUTH" Width="1.5" PointX="7.375" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="6.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAGRELATION" Width="1.5" PointX="8.5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Model.DASHBOARDDASHLET" />
+        <AssociationConnector Association="Model.DASHLETMODULEDASHLET" />
+        <AssociationConnector Association="Model.TAGTAGRELATION" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

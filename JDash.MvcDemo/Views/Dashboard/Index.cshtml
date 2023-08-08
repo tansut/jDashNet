@@ -1,0 +1,351 @@
+﻿@using JDash.Models
+@{
+    ViewBag.Title = "Asp.Net MVC Dashboard";
+}
+@model DashboardModel
+@using JDash.MvcDemo.Helpers
+
+<div id="pageContainer">
+
+
+    <div class="container well sloganContainer pageHeader">
+        <div class="row">
+            <div class="col-md-10">
+                <h1>Dashboard Framework for Asp.Net MVC
+                                <small>
+                                    <br>
+                                    Provide personalized start pages and modern dashboards to your users.</small>
+                </h1>
+            </div>
+            <div class="col-md-2">
+
+                <div class="btn-toolbar">
+                    <div>
+                        <a class="btn btn-success btn-lg btn-block" href="http://www.jdash.net/download" target="_blank">
+                            <i class="glyphicon glyphicon-download"></i>
+                            Download
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="btn btn-primary btn-block btn-lg btn-success" target="_blank" href="http://forum.jdash.net">Support
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <nav class="navbar navbar-default dashTools" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tools-nav-bar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="tools-nav-bar">
+
+
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" id="dashboardDropdown" class="navbar-brand dropdown-toggle " data-toggle="dropdown"></a>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li>
+
+                    <a href="#" class="createDashboard"><i class="glyphicon glyphicon-plus"></i>New Dashboard</a>
+                </li>
+                <li>
+                    <a id="ctlEditDashboard" href="#">
+                        <div class="createDashboard" id="editDashboard"><i class="glyphicon glyphicon-edit"></i>Customize</div>
+                    </a></li>
+                <li>
+                <li>
+                    <a href="#">
+                        <div class="deleteDashboard"><i class="glyphicon glyphicon-remove"></i>Delete</div>
+                    </a>
+                </li>
+                <li class="divider-vertical"></li>
+                <li>
+                    <form class="navbar-form">
+                        <button type="button" class="btn btn-primary" id="listDashboardsBtn">
+                            My Dashboards
+                        </button>
+                    </form>
+
+                </li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="designSwitch">
+                        <input type="checkbox" checked id="dashboardDesignSwitch" data-on-label="Design" data-off-label="View" data-on="success" data-off="primary">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    @(Html.JDash().DashboardTitle()
+                  .DashboardView("myDashboard")
+                  .Css("dashboard-title")
+                  .Tag("h2")
+                  .InitialContent("")
+                  .Render())
+    <div id="dashletModules" class="d-module-container">
+    <ul class="nav nav-tabs groupContainer" id="moduleCategories">
+        <li class="active"><a class="allLink" href="#">All</a></li>
+        @foreach (var item in ViewBag.DashletModuleCategories)
+        {
+            <li><a href="#">@item</a></li>
+        }
+    </ul>
+
+        <a class="navbar-arrow left prev"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+        <a class="navbar-arrow right next"><i class="glyphicon glyphicon-circle-arrow-right"></i></a>
+        <div class="frame">
+            @using (Html.JDash().DashletModulesContainer().Tag("ul").Css("slidee").Content())
+            {
+                foreach (var module in ViewBag.DashletModules)
+                {
+                    var iconClass = module.config.ContainsKey("iconClass") ?
+                        module.config["iconClass"] :
+                        "glyphicon-move";
+
+                    var moduleElement = Html.JDash().DashletCreateLink()
+                                .Tag("li")
+                                .Css("d-module-item")
+                                .Module(module.id)
+                                .DashboardView("myDashboard")
+                                .Behaviour(DashletCreateBehaviour.Both);
+
+                    using (moduleElement.Content())
+                    {
+
+                <span class="glyphicon @iconClass"></span>
+                <h4>@module.title</h4>
+              
+                <p class="group">@module.metaData.group</p>
+                    }
+                }
+            }
+        </div>
+        <div class="scrollbar">
+            <div class="handle">
+                <div class="mousearea"></div>
+            </div>
+        </div>
+        <ul class="pages"></ul>
+    </div>
+
+    @{
+        var dashboardView = Html.JDash().DashboardView()
+               .ID("myDashboard")
+               .DesignMode(DashboardDesignMode.full);
+
+        if (ViewBag.CurrentDashboard != null)
+        {
+        @(dashboardView.Load(ViewBag.CurrentDashboard).Render());
+        }
+        else
+        {
+        @(dashboardView.Render());
+        }
+    }
+
+
+
+
+
+
+
+</div>
+
+@section Script {
+
+    <script type="text/javascript">
+
+        function createOrUpdateDashboard(id) {
+            app.DashboardModule.create(id, function (module) {
+
+            }, {
+                handler: function (dashboardId) {
+                    loadDashboard(dashboardId);
+                }
+            });
+        }
+
+        var dashboardView, moduleItems, moduleParent;
+
+        var loadDashboardFromHistory = false;
+
+        function loadDashboard(id, disableState) {
+            getGroupItems($('.allLink'));
+            return dashboardView.load(id).then(function () {
+                if (!disableState) {
+                    loadDashboardFromHistory = false;
+                    History.pushState({ id: id }, dashboardView.model.title, "/dashboard/index/" + id);
+                }
+            }, function (err) {
+                alert(err.message);
+            });
+        }
+
+        function doSly() {
+            var list = $(".d-module-container");
+            var sly = window.sly = new Sly(list.find(".frame"), {
+                horizontal: 1,
+                itemNav: 'basic',
+                activateMiddle: 1,
+                smart: 1,
+                releaseSwing: 1,
+                startAt: 0,
+                scrollBar: list.find('.scrollbar'),
+                scrollBy: 1,
+                pagesBar: list.find('.pages'),
+                activatePageOn: 'click',
+                speed: 300,
+                moveBy: 600,
+                elasticBounds: 1,
+                dragHandle: 1,
+                dynamicHandle: 1,
+                clickBar: 1,
+                prevPage: list.find('.prev'),
+                nextPage: list.find('.next')
+            });
+            sly.init();
+        }
+
+        function getGroupItems(domObject) {
+            moduleItems.remove();
+            for (var i = 0; i < moduleItems.length; i++) {
+                var groupName = $(window.dashletModule[i]).find('.group').text();
+                var groupText = domObject ? domObject.text() : "";
+                if (groupName == groupText || groupText == "All") {
+                    moduleParent.append(window.dashletModule[i]);
+                }
+            }
+            if (domObject) {
+                domObject.parent().siblings().removeClass('active');
+                domObject.parent().addClass('active');
+            }
+            doSly();
+        }
+
+        window.runApp = function () {
+            moduleItems = $('.d-module-item');
+            moduleParent = $('.slidee');
+            window.dashletModule = moduleItems;
+
+            dashboardView = jdash.ui.registry.byId("myDashboard");
+
+            function openDashboards() {
+                app.DashboardsMenu.create(null, {
+                    id: dashboardView.isLoaded() ? dashboardView.model.id : undefined,
+                    onload: function (id) {
+                        loadDashboard(id);
+                        this.hide();
+                    }
+                });
+            }
+
+
+            $(".createDashboard").on("click", function (e) {
+                var isEdit = $(this).attr("id") ? true : false;
+                var id = dashboardView.isLoaded() && isEdit ? dashboardView.model.id : undefined;
+                createOrUpdateDashboard(id);
+            });
+
+            $(".deleteDashboard").on("click", function (e) {
+                var id = dashboardView.model.id;
+                app.DashboardModule.delete(id, function (module) {
+                    dashboardView.unload();
+                    openDashboards();
+                });
+            });
+
+
+
+            $('#moduleCategories li a').on("click", function () {
+                getGroupItems($(this));
+            });
+
+
+            $("#listDashboardsBtn,#dashboardDropdown").on("click", function () {
+                openDashboards();
+            });
+
+
+            doSly();
+
+            $(window).resize(function (e) {
+                window.sly.reload();
+            });
+
+            $('input[type="checkbox"],[type="radio"]').not('#create-switch').bootstrapSwitch();
+
+            $('#dashboardDesignSwitch').on('switch-change', function (e, data) {
+                var $element = $(data.el),
+                    value = data.value;
+                dashboardView.set("designMode", value ? jdash.designMode.full : jdash.designMode.none);
+                value ? $("#dashletModules").show(500) : $("#dashletModules").hide(500);
+            });
+
+            $("#pageContainer").css("opacity", "1");
+
+            $('#sb-container div').click(function (item) {
+                var id = $(this).attr("data-dashboard-id");
+                var label = $("h4 span", this).text();
+                $("#loadDashboardButton").text(label);
+                $("#loadDashboardButton").attr("data-dashboard-id", id);
+
+            });
+
+            $("#loadDashboardButton").click(function () {
+                var id = $(this).attr("data-dashboard-id");
+                loadDashboard(id);
+            })
+
+
+            History.Adapter.bind(window, 'statechange', function () {
+                var state = History.getState();
+                if (state.data.id) {
+                    if (loadDashboardFromHistory)
+                        loadDashboard(state.data.id, true);
+                    loadDashboardFromHistory = true;
+                }
+            });
+
+            var autoLoaded = false;
+
+            @{
+                if (ViewBag.CurrentDashboard == null)
+                {
+                    
+                    <text>autoLoaded = true; openDashboards();</text>
+                }
+            }
+
+
+            dashboardView.subscribe("jdash/dashboard/loading/completed", function (event) {
+                // handler for loading completed
+            });
+        }
+    </script>
+}

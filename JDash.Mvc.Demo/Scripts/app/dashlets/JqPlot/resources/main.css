@@ -1,0 +1,22 @@
+﻿.chartDashlet .d-dashlet-body
+{
+    padding:5px;
+}
+
+.ui-d-JqPlotEditor {
+    width:100% !important;
+}
+
+    .ui-d-JqPlotEditor textarea {
+        height:100px;
+    }
+    .ui-d-JqPlotEditor table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        padding: 0 0 0 0;
+        
+    }
+    .ui-d-JqPlotEditor td {
+        padding: 5px 0 0 3px !important;
+    }
+    

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<ArrayOfCubeModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CubeModel>
+    <Name>Product Sales</Name>
+    <Caption>Product Sales</Caption>
+    <Description />
+    <Dimensions>
+      <DimensionModel>
+        <Name>Payment_Type</Name>
+        <Caption>Payment Type</Caption>
+        <Type>Text</Type>
+      </DimensionModel>
+      <DimensionModel>
+        <Name>State</Name>
+        <Caption>State</Caption>
+        <Type>Text</Type>
+      </DimensionModel>
+      <DimensionModel>
+        <Name>Country</Name>
+        <Caption>Country</Caption>
+        <Type>Text</Type>
+      </DimensionModel>
+      <DimensionModel>
+        <Name>Product</Name>
+        <Caption>Product</Caption>
+        <Type>Text</Type>
+      </DimensionModel>
+      <DimensionModel>
+        <Name>Year</Name>
+        <Caption>Year</Caption>
+        <Type>Integer</Type>
+      </DimensionModel>
+      <DimensionModel>
+        <Name>Month</Name>
+        <Caption>Month</Caption>
+        <Type>Integer</Type>
+      </DimensionModel>
+    </Dimensions>
+    <Measures>
+      <MeasureModel>
+        <Name>Quantity</Name>
+        <Caption>Quantity</Caption>
+        <Type>Integer</Type>
+        <Aggregation>Sum</Aggregation>
+      </MeasureModel>
+      <MeasureModel>
+        <Name>Unit_Price</Name>
+        <Caption>Unit Price</Caption>
+        <Type>Decimal</Type>
+        <DefaultFormat>
+          <FormatString>C</FormatString>
+        </DefaultFormat>
+        <Aggregation>Sum</Aggregation>
+      </MeasureModel>
+      <MeasureModel>
+        <Name>VAT</Name>
+        <Caption>VAT</Caption>
+        <Type>Decimal</Type>
+        <Aggregation>Sum</Aggregation>
+      </MeasureModel>
+      <MeasureModel>
+        <Name>Total_Price</Name>
+        <Caption>Total Price</Caption>
+        <Type>Decimal</Type>
+        <DefaultFormat>
+          <FormatString>C</FormatString>
+        </DefaultFormat>
+        <Aggregation>Sum</Aggregation>
+      </MeasureModel>
+    </Measures>
+    <DefaultAggregation>Sum</DefaultAggregation>
+  </CubeModel>
+</ArrayOfCubeModel>

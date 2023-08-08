@@ -1,0 +1,103 @@
+﻿  .weatherBoard {
+            width: 100%;
+            background-color: #082a4d;
+            overflow:hidden;
+            height:100%;
+            
+        }
+            .weatherBoard span {
+                text-shadow:none !important;
+            }
+
+            .weatherBoard .caption {
+                font-family: 'Segoe UI';
+                font-size: 25pt;
+                font-weight: bold;
+                margin-left : 20px;
+                margin-top: 15px;
+                color: white;
+            }
+
+            .weatherBoard .date {
+                font-family: 'Segoe UI';
+                font-size: 18pt;
+                font-weight: bold;
+                margin-left: 20px;
+                margin-top: 0px;
+                color: #105ba7;
+                text-shadow:none !important;
+            }
+
+            .weatherBoard .container {
+                margin-top: 5px;
+                width: 100%;
+                height: auto;
+                display:inline-block;
+                margin-bottom:5px;
+            }
+
+            .weatherBoard .board {
+                float: left;
+                width: 360px;
+                height: 70px;
+                background-image: url(Images/g1.png);
+                border: 1px solid black;
+                border-radius: 5px;
+                margin-top: 15px;
+                margin-left: 5px;
+                position:relative;
+            }
+
+            .weatherBoard .cityLabel {
+                top: 15px;
+                left: 15px;
+                font-family: 'Segoe UI';
+                font-size: 24pt;
+                color: white;
+                position:absolute;
+
+            }
+
+            .weatherBoard .watherLabel {
+                right: 15px;
+                font-family: 'Segoe UI';
+                font-size: 29pt;
+                font-weight: bold;
+                color: #6dccfd;
+                position:absolute;
+            }
+
+            .weatherBoard .desc {
+                right: 15px;
+                font-family: 'Segoe UI';
+                font-size: 7pt;
+                color: white;
+                bottom:7px;
+                position:absolute;
+            }
+
+            .weatherBoard .weatherImage {
+                left: 155px;
+                position:absolute;
+            }
+
+        .weatherEditor {
+            
+        }
+
+            .weatherEditor .CityBox {
+                position:relative;
+                border:1px solid #cccccc;
+                border-radius:5px;
+                margin-top:5px;
+                padding:5px;
+
+            }
+            .weatherEditor input {
+                width:200px;
+            }
+            .weatherEditor .delete {
+                position:absolute;
+                right:5px;
+                top:5px;
+            }

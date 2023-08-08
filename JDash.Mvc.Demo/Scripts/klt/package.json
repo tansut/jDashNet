@@ -1,0 +1,26 @@
+﻿{
+	"name": "klt",
+	"version":"1.0.0",
+	"dependencies": {
+		"dojo": "1.9.2"
+	},
+	"main": "main",
+	"directories": {
+		"lib": "."
+	},
+	"description": "Klt core library",
+	"licenses": [
+		 {
+				 "type": "AFLv2.1",
+				 "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+		 },
+		 {
+				 "type": "BSD",
+				 "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+		 }
+	],
+	"bugs": "http://bugs.dojotoolkit.org/",
+	"keywords": ["JavaScript", "Dojo", "Toolkit"],
+	"homepage": "http://dojotoolkit.org/",
+	"dojoBuild": "klt.profile.js"
+}

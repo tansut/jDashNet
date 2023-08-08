@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JDashRegistrationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="JDashRegistrationModelStoreContainer">
+          <EntitySet Name="Registration" EntityType="JDashRegistrationModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Workstation" EntityType="JDashRegistrationModel.Store.Workstation" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Workstation_Workstation" Association="JDashRegistrationModel.Store.FK_Workstation_Workstation">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Workstation" EntitySet="Workstation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistrationName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="PurchaseDate" Type="datetime" Nullable="false" />
+          <Property Name="RegistrationCount" Type="int" Nullable="false" />
+          <Property Name="RegistrationLimit" Type="int" Nullable="false" />
+          <Property Name="FirstRegistration" Type="datetime" Nullable="false" />
+          <Property Name="LastRegistration" Type="datetime" />
+          <Property Name="Version" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="RuntimeLicenseKey" Type="ntext" Nullable="false" />
+          <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="CorrectedPurchaseDate" Type="datetime" />
+          <Property Name="SubscriptionCount" Type="int" Nullable="false" />
+          <Property Name="SubscriptionLimit" Type="int" Nullable="false" />
+          <Property Name="PreviousRuntimeLicenseKey" Type="ntext" />
+          <Property Name="SubscriptionDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Workstation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistrationID" Type="int" Nullable="false" />
+          <Property Name="WorkstationID" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Workstation_Workstation">
+          <End Role="Registration" Type="JDashRegistrationModel.Store.Registration" Multiplicity="1" />
+          <End Role="Workstation" Type="JDashRegistrationModel.Store.Workstation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Workstation">
+              <PropertyRef Name="RegistrationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JDashRegistrationModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="JDashRegistrationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Registration" EntityType="JDashRegistrationModel.Registration" />
+          <EntitySet Name="Workstation" EntityType="JDashRegistrationModel.Workstation" />
+          <AssociationSet Name="FK_Workstation_Workstation" Association="JDashRegistrationModel.FK_Workstation_Workstation">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Workstation" EntitySet="Workstation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistrationName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RegistrationCount" Type="Int32" Nullable="false" />
+          <Property Name="RegistrationLimit" Type="Int32" Nullable="false" />
+          <Property Name="FirstRegistration" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastRegistration" Type="DateTime" Precision="3" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="RuntimeLicenseKey" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProductID" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="CorrectedPurchaseDate" Type="DateTime" Precision="3" />
+          <Property Name="SubscriptionCount" Type="Int32" Nullable="false" />
+          <Property Name="SubscriptionLimit" Type="Int32" Nullable="false" />
+          <Property Name="PreviousRuntimeLicenseKey" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SubscriptionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Workstation" Relationship="JDashRegistrationModel.FK_Workstation_Workstation" FromRole="Registration" ToRole="Workstation" />
+        </EntityType>
+        <EntityType Name="Workstation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistrationID" Type="Int32" Nullable="false" />
+          <Property Name="WorkstationID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Registration" Relationship="JDashRegistrationModel.FK_Workstation_Workstation" FromRole="Workstation" ToRole="Registration" />
+        </EntityType>
+        <Association Name="FK_Workstation_Workstation">
+          <End Role="Registration" Type="JDashRegistrationModel.Registration" Multiplicity="1" />
+          <End Role="Workstation" Type="JDashRegistrationModel.Workstation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Workstation">
+              <PropertyRef Name="RegistrationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JDashRegistrationModelStoreContainer" CdmEntityContainer="JDashRegistrationEntities">
+          <EntitySetMapping Name="Registration">
+            <EntityTypeMapping TypeName="JDashRegistrationModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RegistrationName" ColumnName="RegistrationName" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="RegistrationCount" ColumnName="RegistrationCount" />
+                <ScalarProperty Name="RegistrationLimit" ColumnName="RegistrationLimit" />
+                <ScalarProperty Name="FirstRegistration" ColumnName="FirstRegistration" />
+                <ScalarProperty Name="LastRegistration" ColumnName="LastRegistration" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="RuntimeLicenseKey" ColumnName="RuntimeLicenseKey" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CorrectedPurchaseDate" ColumnName="CorrectedPurchaseDate" />
+                <ScalarProperty Name="SubscriptionCount" ColumnName="SubscriptionCount" />
+                <ScalarProperty Name="SubscriptionLimit" ColumnName="SubscriptionLimit" />
+                <ScalarProperty Name="PreviousRuntimeLicenseKey" ColumnName="PreviousRuntimeLicenseKey" />
+                <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workstation">
+            <EntityTypeMapping TypeName="JDashRegistrationModel.Workstation">
+              <MappingFragment StoreEntitySet="Workstation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+                <ScalarProperty Name="WorkstationID" ColumnName="WorkstationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6dc33e76ec614653ad8858d5fe5ab92e" Name="Diagram1">
+        <EntityTypeShape EntityType="DashModel.Dashboard" Width="1.5" PointX="5.2003986040132109" PointY="11.140905668558975" />
+        <EntityTypeShape EntityType="DashModel.Dashlet" Width="1.5" PointX="2.81217471641124" PointY="16.549587823706489" />
+        <EntityTypeShape EntityType="DashModel.DashletModule" Width="1.5" PointX="9.948168993903403" PointY="0.85669295529680933" />
+        <EntityTypeShape EntityType="DashModel.EntityAuth" Width="1.5" PointX="5.4930062282332255" PointY="3.4510540680266235" />
+        <EntityTypeShape EntityType="DashModel.Tag" Width="1.5" PointX="4.7282613090836723" PointY="29.557039259726665" />
+        <EntityTypeShape EntityType="DashModel.TagRelation" Width="1.5" PointX="9.909664441789344" PointY="12.186083054256665" />
+        <AssociationConnector Association="DashModel.FK_Dashlets_Dashboard" />
+        <AssociationConnector Association="DashModel.FK_TagRelation_Dashboard" />
+        <AssociationConnector Association="DashModel.FK_Dashlets_DashletModules" />
+        <AssociationConnector Association="DashModel.FK_TagRelation_Dashlets" />
+        <AssociationConnector Association="DashModel.FK_TagRelation_DashletModule" />
+        <AssociationConnector Association="DashModel.FK_TagRelation_Tags" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

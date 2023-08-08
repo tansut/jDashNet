@@ -1,0 +1,17 @@
+﻿@model JDash.MvcDemo.Areas.Dashlets.Models.RssViewModel
+<ul class="rssList">
+
+    @{
+        if (ViewBag.RssItems != null)
+        {
+            foreach (var rss in ViewBag.RssItems)
+            {
+        <li><a target="_blank" href="@rss.Link">@rss.Title</a></li>
+                if (ViewBag.ShowBody)
+                {
+        <li>@Html.Raw(rss.Description)</li>
+                }
+            }
+        }
+    }
+</ul>

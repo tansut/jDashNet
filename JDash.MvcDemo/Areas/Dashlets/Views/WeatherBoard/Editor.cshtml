@@ -1,0 +1,41 @@
+﻿@using JDash.Mvc
+@model JDash.MvcDemo.Areas.Dashlets.Models.WeatherBoardModel
+<div>
+    @using (Ajax.BeginForm(new AjaxOptions() { }))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Set Chart Options</legend>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.Label("Title")
+                    @Html.JDash().DashletTitleEditor().Css("form-control").Render()
+                </div>
+                <div class="col-md-6">
+                    @Html.Label("Style")
+                    @Html.JDash().DashletStylesList().Render()
+                </div>
+            </div>
+            <div class="form-group city">
+                @Html.Label("City")
+                @Html.TextBoxFor(m => m.City, new { @class = "form-control city" })
+                @Html.ValidationMessageFor(m => m.City)
+            </div>
+            <div class="clear-both"></div>
+            <div class="checkbox">
+                <label>
+
+                    @Html.CheckBoxFor(m => m.IsCurrentCity, new { @class = "defaultCityCheck" })
+                    @Html.Label("Use default location")
+                </label>
+            </div>
+
+
+        </fieldset>
+    }
+
+
+</div>

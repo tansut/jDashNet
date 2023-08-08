@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58A790CD-202D-4316-A98C-FDD2CB43E3B4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JDash.WebForms.Demo</RootNamespace>
+    <AssemblyName>JDash.WebForms.Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\JDash.WebForms.Demo.Reference\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\JDash.WebForms.Demo.Reference\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash">
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.InMemoryAnalytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.InMemoryAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.MySqlProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.MySqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.SessionProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.SessionProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.SqlProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.SqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.WebForms">
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPop, Version=2004.6.16.1248, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\OpenPop.dll</HintPath>
+    </Reference>
+    <Reference Include="RssToolkit">
+      <HintPath>..\Jdash.WebForms.Demo.Reference\RssToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Global.Designer.cs">
+      <DependentUpon>Global.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Global.tr-tr.designer.cs">
+      <DependentUpon>Global.tr-tr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controls\CreateDashboardWindow.ascx.cs">
+      <DependentUpon>CreateDashboardWindow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CreateDashboardWindow.ascx.designer.cs">
+      <DependentUpon>CreateDashboardWindow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CreateDashletWindow.ascx.cs">
+      <DependentUpon>CreateDashletWindow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CreateDashletWindow.ascx.designer.cs">
+      <DependentUpon>CreateDashletWindow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UI\BsButton.cs" />
+    <Compile Include="Controls\UI\BsCheckBox.cs" />
+    <Compile Include="Controls\UI\BsDropDown.cs" />
+    <Compile Include="Controls\UI\BsLinkButton.cs" />
+    <Compile Include="Controls\UI\BsSwitch.cs" />
+    <Compile Include="Controls\UI\BsTextBox.cs" />
+    <Compile Include="demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Util.cs" />
+    <Compile Include="JDash\Dashlets\Consumer\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Consumer\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Consumer\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Consumer\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\D3\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\D3\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\D3\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\D3\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DashboardList\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DashboardList\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DashboardList\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DashboardList\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\chartview.ascx.cs">
+      <DependentUpon>chartview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\chartview.ascx.designer.cs">
+      <DependentUpon>chartview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\chartviewEditor.ascx.cs">
+      <DependentUpon>chartviewEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\chartviewEditor.ascx.designer.cs">
+      <DependentUpon>chartviewEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\DemoAnalysisProvider.cs" />
+    <Compile Include="JDash\Dashlets\DataAnalysis\tableview.ascx.cs">
+      <DependentUpon>tableview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\tableview.ascx.designer.cs">
+      <DependentUpon>tableview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\tableviewEditor.ascx.cs">
+      <DependentUpon>tableviewEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\DataAnalysis\tableviewEditor.ascx.designer.cs">
+      <DependentUpon>tableviewEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\EventCapture\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\EventCapture\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\EventCapture\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\EventCapture\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\FusionCharts\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\FusionCharts\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\FusionCharts\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\FusionCharts\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\GoogleMaps\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\GoogleMaps\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\GoogleMaps\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\GoogleMaps\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\HeatMap\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\HeatMap\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\HeatMap\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\HeatMap\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PolyLines\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PolyLines\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PolyLines\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PolyLines\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Highchart\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Highchart\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Highchart\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Highchart\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Html\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Html\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Html\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Html\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\JqPlot\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\JqPlot\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\JqPlot\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\JqPlot\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\BaseChart.ascx.cs">
+      <DependentUpon>BaseChart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\BaseChart.ascx.designer.cs">
+      <DependentUpon>BaseChart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\ChartSettingsControl.ascx.cs">
+      <DependentUpon>ChartSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\ChartSettingsControl.ascx.designer.cs">
+      <DependentUpon>ChartSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\MsChart\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PopClient\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PopClient\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PopClient\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\PopClient\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Publisher\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Publisher\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Publisher\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\Publisher\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RichText\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RichText\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RichText\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RichText\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RssReader\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RssReader\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RssReader\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDash\Dashlets\RssReader\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Master.cs">
+      <DependentUpon>Demo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo.Master.designer.cs">
+      <DependentUpon>Demo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConfigDB.aspx.cs">
+      <DependentUpon>ConfigDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigDB.aspx.designer.cs">
+      <DependentUpon>ConfigDB.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\CubeDefinitions.xml" />
+    <Content Include="App_Data\Prices.xml" />
+    <Content Include="App_Data\Product Sales-DataSet.xml" />
+    <Content Include="Controls\CreateDashboardWindow.ascx" />
+    <Content Include="Controls\CreateDashletWindow.ascx" />
+    <Content Include="default.aspx" />
+    <Content Include="demo.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="JDash\Dashlets\Consumer\Edit.ascx" />
+    <Content Include="JDash\Dashlets\Consumer\View.ascx" />
+    <Content Include="JDash\Dashlets\D3\Edit.ascx" />
+    <Content Include="JDash\Dashlets\D3\D3Module.js" />
+    <Content Include="JDash\Dashlets\D3\resources\collatz.js" />
+    <Content Include="JDash\Dashlets\D3\resources\colorbrewer.css" />
+    <Content Include="JDash\Dashlets\D3\resources\d3.css" />
+    <Content Include="JDash\Dashlets\D3\resources\d3.geo.js" />
+    <Content Include="JDash\Dashlets\D3\resources\d3.layout.js" />
+    <Content Include="JDash\Dashlets\D3\resources\D3.v3.min.js" />
+    <Content Include="JDash\Dashlets\D3\resources\editor.htm" />
+    <Content Include="JDash\Dashlets\D3\resources\presets.js" />
+    <Content Include="JDash\Dashlets\D3\View.ascx" />
+    <Content Include="JDash\Dashlets\DashboardList\Edit.ascx" />
+    <Content Include="JDash\Dashlets\DashboardList\View.ascx" />
+    <Content Include="JDash\Dashlets\DataAnalysis\ChartDashlet.js" />
+    <Content Include="JDash\Dashlets\DataAnalysis\chartview.ascx" />
+    <Content Include="JDash\Dashlets\DataAnalysis\chartviewEditor.ascx" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Common.js" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\DataAnalysisStyles.css" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\areachart.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\arrowl.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\arrowr.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\barchart.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\columnchart.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\linechart.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\Resource\img\piechart.png" />
+    <Content Include="JDash\Dashlets\DataAnalysis\tableview.ascx" />
+    <Content Include="JDash\Dashlets\DataAnalysis\tableviewEditor.ascx" />
+    <Content Include="JDash\Dashlets\EventCapture\Edit.ascx" />
+    <Content Include="JDash\Dashlets\EventCapture\View.ascx" />
+    <Content Include="JDash\Dashlets\FusionCharts\Edit.ascx" />
+    <Content Include="JDash\Dashlets\FusionCharts\FusionChart.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\Data.xml" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\firebug-lite.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\FusionCharts.HC.Charts.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\FusionCharts.HC.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\FusionCharts.HC.Widgets.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\FusionCharts.jqueryplugin.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\FusionCharts.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\FusionChartsExportComponent.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\fc\jquery.min.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\resources\presets.js" />
+    <Content Include="JDash\Dashlets\FusionCharts\View.ascx" />
+    <Content Include="JDash\Dashlets\GoogleMaps\Edit.ascx" />
+    <Content Include="JDash\Dashlets\GoogleMaps\GoogleMap.js" />
+    <Content Include="JDash\Dashlets\GoogleMapLoader.js" />
+    <Content Include="JDash\Dashlets\HeatMap\Edit.ascx" />
+    <Content Include="JDash\Dashlets\HeatMap\GoogleMapVisualizer.js" />
+    <Content Include="JDash\Dashlets\HeatMap\Resource\walmarts.js" />
+    <Content Include="JDash\Dashlets\HeatMap\View.ascx" />
+    <Content Include="JDash\Dashlets\PolyLines\Edit.ascx" />
+    <Content Include="JDash\Dashlets\PolyLines\GoogleMapVisualizer.js" />
+    <Content Include="JDash\Dashlets\GoogleMaps\View.ascx" />
+    <Content Include="JDash\Dashlets\PolyLines\View.ascx" />
+    <Content Include="JDash\Dashlets\Highchart\Edit.ascx" />
+    <Content Include="JDash\Dashlets\Highchart\hcModule.js" />
+    <Content Include="JDash\Resource\JavaScript\hcThemes\blue.js" />
+    <Content Include="JDash\Resource\JavaScript\hcThemes\default.js" />
+    <Content Include="JDash\Resource\JavaScript\hcThemes\green.js" />
+    <Content Include="JDash\Resource\JavaScript\hcThemes\gray.js" />
+    <Content Include="JDash\Resource\JavaScript\highcharts.js" />
+    <Content Include="JDash\Resource\JavaScript\jquery.js" />
+    <Content Include="JDash\Dashlets\Highchart\resources\templates.txt" />
+    <Content Include="JDash\Dashlets\Highchart\View.ascx" />
+    <Content Include="JDash\Dashlets\Html\Edit.ascx" />
+    <Content Include="JDash\Dashlets\Html\View.ascx" />
+    <Content Include="JDash\Dashlets\JqPlot\Edit.ascx" />
+    <Content Include="JDash\Dashlets\JqPlot\jqPlotModule.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\excanvas.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\excanvas.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\jqPlot.css" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\jquery.jqplot.css" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\jquery.jqplot.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.barRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.ciParser.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.cursor.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.cursor.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.dragable.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.dragable.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.highlighter.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.json2.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.json2.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.mobile.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.mobile.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pointLabels.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.trendline.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\JqPlot\plugins\jqplot.trendline.min.js" />
+    <Content Include="JDash\Dashlets\JqPlot\resources\Underscore.js" />
+    <Content Include="JDash\Dashlets\JqPlot\View.ascx" />
+    <Content Include="JDash\Dashlets\MsChart\BaseChart.ascx" />
+    <Content Include="JDash\Dashlets\MsChart\ChartSettingsControl.ascx" />
+    <Content Include="JDash\Dashlets\MsChart\Edit.ascx" />
+    <Content Include="JDash\Dashlets\MsChart\View.ascx" />
+    <Content Include="JDash\Dashlets\PopClient\Edit.ascx" />
+    <Content Include="JDash\Dashlets\PopClient\Resource\attach.jpg" />
+    <Content Include="JDash\Dashlets\PopClient\View.ascx" />
+    <Content Include="JDash\Dashlets\Publisher\Edit.ascx" />
+    <Content Include="JDash\Dashlets\Publisher\View.ascx" />
+    <Content Include="JDash\Dashlets\RichText\Edit.ascx" />
+    <Content Include="JDash\Dashlets\RichText\resources\build-config.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\ckeditor.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\config.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\contents.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\af.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ar.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\bg.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\bn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\bs.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ca.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\cs.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\cy.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\da.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\de.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\el.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\en-au.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\en-ca.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\en-gb.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\en.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\eo.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\es.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\et.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\eu.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\fa.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\fi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\fo.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\fr-ca.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\fr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\gl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\gu.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\he.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\hi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\hr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\hu.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\is.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\it.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ja.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ka.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\km.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ko.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ku.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\lt.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\lv.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\mk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\mn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ms.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\nb.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\nl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\no.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\pl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\pt-br.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\pt.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ro.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ru.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\sk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\sl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\sr-latn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\sr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\sv.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\th.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\tr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\ug.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\uk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\vi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\zh-cn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\lang\zh.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\about\dialogs\about.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\dialog\dialogDefinition.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\icons.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\image\dialogs\image.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\image\images\noimage.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\link\dialogs\anchor.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\link\dialogs\link.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\link\images\anchor.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\magicline\images\icon.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\pastefromword\filter\default.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\scayt\dialogs\options.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\table\dialogs\table.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\dialog.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\dialog_ie.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\dialog_ie7.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\dialog_ie8.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\dialog_iequirks.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\dialog_opera.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\editor.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\editor_gecko.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\editor_ie.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\editor_ie7.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\editor_ie8.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\editor_iequirks.css" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\icons.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\images\arrow.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\images\close.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\images\mini.png" />
+    <Content Include="JDash\Dashlets\RichText\resources\styles.js" />
+    <Content Include="JDash\Dashlets\RichText\View.ascx" />
+    <Content Include="JDash\Dashlets\RssReader\Edit.ascx" />
+    <Content Include="JDash\Dashlets\RssReader\Resource\rssreader.css" />
+    <Content Include="JDash\Dashlets\RssReader\View.ascx" />
+    <Content Include="readme.txt" />
+    <Content Include="Resource\css\app.css" />
+    <Content Include="Resource\css\bootstrap.css" />
+    <Content Include="Resource\css\bootstrap.min.css" />
+    <Content Include="Resource\css\switch.css" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resource\img\glyphicons-halflings-white.png" />
+    <Content Include="Resource\img\glyphicons-halflings.png" />
+    <Content Include="Resource\img\loading-blue.gif" />
+    <Content Include="Resource\img\loading.gif" />
+    <Content Include="Resource\img\page-bg-gray.png" />
+    <Content Include="Resource\img\page-bg.jpg" />
+    <Content Include="Resource\img\pagemenu-bg.png" />
+    <Content Include="Resource\img\Tutorial\tutorial-img1.png" />
+    <Content Include="Resource\img\Tutorial\tutorial-img2.png" />
+    <Content Include="Resource\img\Tutorial\tutorial-img3.png" />
+    <Content Include="Resource\img\Tutorial\tutorial-img4.png" />
+    <Content Include="Resource\js\bootstrap-affix.js" />
+    <Content Include="Resource\js\bootstrap-alert.js" />
+    <Content Include="Resource\js\bootstrap-button.js" />
+    <Content Include="Resource\js\bootstrap-carousel.js" />
+    <Content Include="Resource\js\bootstrap-collapse.js" />
+    <Content Include="Resource\js\bootstrap-dropdown.js" />
+    <Content Include="Resource\js\bootstrap-modal.js" />
+    <Content Include="Resource\js\bootstrap-popover.js" />
+    <Content Include="Resource\js\bootstrap-scrollspy.js" />
+    <Content Include="Resource\js\bootstrap-tab.js" />
+    <Content Include="Resource\js\bootstrap-tooltip.js" />
+    <Content Include="Resource\js\bootstrap-transition.js" />
+    <Content Include="Resource\js\bootstrap-typeahead.js" />
+    <Content Include="Resource\js\bootstrap.js" />
+    <Content Include="Resource\js\bootstrap.min.js" />
+    <Content Include="Resource\js\bootstrapSwitch.js" />
+    <Content Include="Resource\js\jquery-1.9.1.min.js" />
+    <Content Include="Resource\js\jquery.js" />
+    <Content Include="ConfigDB.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JDash\Dashlets\JqPlot\resources\presets.json" />
+    <Content Include="Demo.Master" />
+    <Content Include="Resource\Themes\Custom\images\icons-18-black-pack.png" />
+    <Content Include="Resource\Themes\Custom\images\icons-18-white-pack.png" />
+    <Content Include="Resource\Themes\Custom\images\icons-36-black-pack.png" />
+    <Content Include="Resource\Themes\Custom\images\icons-36-white-pack.png" />
+    <Content Include="Resource\Themes\Custom\images\ui-icon-busy.gif" />
+    <Content Include="Resource\Themes\Custom\main.css" />
+    <Content Include="Scripts\MySQLDashboardProvider.sql" />
+    <Content Include="Scripts\SQLDashboardProvider.sql" />
+    <Content Include="tempImages\foo.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="JDash\Dashlets\RichText\resources\CHANGES.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\LICENSE.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\scayt\LICENSE.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\scayt\README.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\wsc\LICENSE.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\plugins\wsc\README.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\README.md" />
+    <Content Include="JDash\Dashlets\RichText\resources\skins\moono\readme.md" />
+    <Content Include="JDash\Dashlets\D3\resources\flare.js" />
+    <Content Include="JDash\Dashlets\D3\resources\flowers.js" />
+    <Content Include="JDash\Dashlets\D3\resources\sp500.csv" />
+    <Content Include="JDash\Dashlets\D3\resources\unemployment.js" />
+    <Content Include="JDash\Dashlets\D3\resources\us-counties.js" />
+    <Content Include="JDash\Dashlets\D3\resources\us-states.js" />
+    <Content Include="JDash\Dashlets\D3\resources\wheel.js" />
+    <Content Include="JDash\Dashlets\D3\resources\data.tsv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Global.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Global.tr-tr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.tr-tr.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Themes\Custom\main.less" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50744</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13866</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

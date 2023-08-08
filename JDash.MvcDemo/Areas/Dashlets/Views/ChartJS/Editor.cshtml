@@ -1,0 +1,41 @@
+﻿@model JDash.MvcDemo.Areas.Dashlets.Models.ChartJSModel
+@using JDash.Mvc
+<div>
+    @using (Ajax.BeginForm(new AjaxOptions() { }))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Set Chart Options</legend>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.Label("Title")
+                    @Html.JDash().DashletTitleEditor().Css("form-control").Render()
+                </div>
+
+                <div class="col-md-6">
+                    @Html.Label("Style")
+                    @Html.JDash().DashletStylesList().Render()
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ChartType)
+                @Html.DropDownListFor(m => m.ChartType, Model.ChartTypes, "Select a chart type", new { @class = "form-control templateList" })
+                @Html.ValidationMessageFor(m => m.ChartType)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ChartData)
+                @Html.TextAreaFor(m => m.ChartData, new { @class = "form-control templateBox", rows = "5" })
+                @Html.ValidationMessageFor(m => m.ChartData)
+            </div>
+
+
+        </fieldset>
+    }
+
+
+</div>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DashModelStoreContainer" CdmEntityContainer="MySQLDashEntity">
+    <EntitySetMapping Name="dashboard">
+      <EntityTypeMapping TypeName="MySqlDashModel.dashboard">
+        <MappingFragment StoreEntitySet="dashboard">
+          <ScalarProperty Name="UserProperty3" ColumnName="UserProperty3" />
+          <ScalarProperty Name="UserProperty2" ColumnName="UserProperty2" />
+          <ScalarProperty Name="UserProperty1" ColumnName="UserProperty1" />
+          <ScalarProperty Name="groupOrder" ColumnName="groupOrder" />
+          <ScalarProperty Name="viewOrder" ColumnName="viewOrder" />
+          <ScalarProperty Name="userData" ColumnName="userData" />
+          <ScalarProperty Name="shared" ColumnName="shared" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+          <ScalarProperty Name="attr" ColumnName="attr" />
+          <ScalarProperty Name="cls" ColumnName="cls" />
+          <ScalarProperty Name="style" ColumnName="style" />
+          <ScalarProperty Name="paneConfig" ColumnName="paneConfig" />
+          <ScalarProperty Name="config" ColumnName="config" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dashlet">
+      <EntityTypeMapping TypeName="MySqlDashModel.dashlet">
+        <MappingFragment StoreEntitySet="dashlet">
+          <ScalarProperty Name="UserProperty3" ColumnName="UserProperty3" />
+          <ScalarProperty Name="UserProperty2" ColumnName="UserProperty2" />
+          <ScalarProperty Name="UserProperty1" ColumnName="UserProperty1" />
+          <ScalarProperty Name="userData" ColumnName="userData" />
+          <ScalarProperty Name="shared" ColumnName="shared" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+          <ScalarProperty Name="attr" ColumnName="attr" />
+          <ScalarProperty Name="cls" ColumnName="cls" />
+          <ScalarProperty Name="style" ColumnName="style" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="paneConfig" ColumnName="paneConfig" />
+          <ScalarProperty Name="config" ColumnName="config" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="dashletModuleId" ColumnName="dashletModuleId" />
+          <ScalarProperty Name="dashboardId" ColumnName="dashboardId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dashletmodule">
+      <EntityTypeMapping TypeName="MySqlDashModel.dashletmodule">
+        <MappingFragment StoreEntitySet="dashletmodule">
+          <ScalarProperty Name="UserProperty3" ColumnName="UserProperty3" />
+          <ScalarProperty Name="UserProperty2" ColumnName="UserProperty2" />
+          <ScalarProperty Name="UserProperty1" ColumnName="UserProperty1" />
+          <ScalarProperty Name="groupOrder" ColumnName="groupOrder" />
+          <ScalarProperty Name="viewOrder" ColumnName="viewOrder" />
+          <ScalarProperty Name="userData" ColumnName="userData" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+          <ScalarProperty Name="shared" ColumnName="shared" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="attr" ColumnName="attr" />
+          <ScalarProperty Name="cls" ColumnName="cls" />
+          <ScalarProperty Name="style" ColumnName="style" />
+          <ScalarProperty Name="dashletConfig" ColumnName="dashletConfig" />
+          <ScalarProperty Name="paneConfig" ColumnName="paneConfig" />
+          <ScalarProperty Name="config" ColumnName="config" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entityauth">
+      <EntityTypeMapping TypeName="MySqlDashModel.entityauth">
+        <MappingFragment StoreEntitySet="entityauth">
+          <ScalarProperty Name="authType" ColumnName="authType" />
+          <ScalarProperty Name="permission" ColumnName="permission" />
+          <ScalarProperty Name="roleOrUser" ColumnName="roleOrUser" />
+          <ScalarProperty Name="entityId" ColumnName="entityId" />
+          <ScalarProperty Name="entityType" ColumnName="entityType" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tag">
+      <EntityTypeMapping TypeName="MySqlDashModel.tag">
+        <MappingFragment StoreEntitySet="tag">
+          <ScalarProperty Name="tagName" ColumnName="tagName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tagrelation">
+      <EntityTypeMapping TypeName="MySqlDashModel.tagrelation">
+        <MappingFragment StoreEntitySet="tagrelation">
+          <ScalarProperty Name="controller" ColumnName="controller" />
+          <ScalarProperty Name="controlId" ColumnName="controlId" />
+          <ScalarProperty Name="tagId" ColumnName="tagId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

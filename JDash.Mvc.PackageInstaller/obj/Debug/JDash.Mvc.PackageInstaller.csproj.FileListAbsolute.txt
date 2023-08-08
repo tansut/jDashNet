@@ -1,0 +1,4 @@
+E:\temp\PreDeploy\JDash.Mvc.PackageInstaller.exe
+E:\temp\PreDeploy\JDash.Mvc.PackageInstaller.pdb
+E:\temp\jdash\JDash.Mvc.PackageInstaller\obj\Debug\JDash.Mvc.PackageInstaller.exe
+E:\temp\jdash\JDash.Mvc.PackageInstaller\obj\Debug\JDash.Mvc.PackageInstaller.pdb

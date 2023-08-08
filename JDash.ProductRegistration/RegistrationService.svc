@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="JDash.ProductRegistration.RegistrationService" CodeBehind="RegistrationService.svc.cs" %>

@@ -1,0 +1,22 @@
+﻿<div>
+    <form>
+    <p>
+        
+        <input placeholder="Content Url" type="text" name="contentUrl" data-dojo-attach-point="contentUrl" />
+    </p>
+    <p>
+        <label data-dojo-attach-point="viewModeLbl" for="viewMode">View Mode</label>
+        <select name="viewMode" data-dojo-attach-point="viewMode" data-dojo-attach-event="onchange: _viewModeChanged">
+            <option data-dojo-attach-point="iFrameOpt" value="iFrame">Inside IFrame</option>
+            <option data-dojo-attach-point="inlineOpt" value="inline">Inside Current Document</option>
+        </select>
+    </p>
+        <label data-dojo-attach-point="frameDimLbl" for="viewMode">Frame Dimensions</label>
+        <table  style="width:100%;  " >
+            <tr>
+                <td><input placeholder="Window Width" type="text"  data-dojo-attach-point="windowWidth" /></td>
+                <td><input placeholder="Window Height" type="text"  data-dojo-attach-point="windowHeigth" /></td>
+            </tr>
+        </table>
+    </form>
+</div>

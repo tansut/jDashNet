@@ -1,0 +1,79 @@
+﻿@using JDash.Mvc
+@using JDash.Models
+@model JDash.MvcDemo.Models.DashboardCreationModel
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Set dashboard properties</h4>
+            </div>
+            @using (Ajax.BeginForm("SaveDashboard", "Dashboard", new AjaxOptions { HttpMethod = "POST", OnSuccess = "DashboardEditModuleSuccessHandler" }))
+            {
+                <div class="modal-body">
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(Model => Model.id)
+                    <div class="alert alert-danger hide ctlErrorAlert">
+                        <div class="ctlErrorAlertMessage"></div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.title)
+                        @Html.TextBoxFor(Model => Model.title, new { @class = "form-control ctlDashboardTitle", @placeholder = "Set a title for your dashboard" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.layoutId)
+                        <div class="controls">
+                            @foreach (KeyValuePair<string, LayoutModel> item in LayoutModel.PredefinedLayouts)
+                            {  
+                                <div id="predefinedLayout" class="d-layout-predefined d-layout-predefined@(item.Key)" data-layoutId="@(item.Key)"></div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="form-group ctlGroups">
+                        <label>Assign dashboard to an existing logical group (optional)</label>
+                        @Html.DropDownListFor(Model => Model.group, new SelectList(ViewBag.DashboardGroups), new { @class = "form-control" })
+                    </div>
+                    <div class="clear-both"></div>
+                    <div class="form-group">
+                        @Html.CheckBoxFor(Model => Model.customGroupChecked, new { @class = "ctlCustomGroupCheckbox" })  @Html.LabelFor(Model => Model.customGroupChecked)
+
+                    </div>
+                    <div class="form-group customGroupIsVisible" style="display: none">
+                        @Html.TextBoxFor(Model => Model.customGroupName, new { @class = "form-control", @placeholder = "Set a group name for your dashboard" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.description)
+                        @Html.TextAreaFor(Model => Model.description, new { @placeholder = "Set a description(optional)", @class = "form-control", @cols = "80", @rows = "4" })
+                    </div>
+                    <div class="form-group">
+
+                        @Html.LabelFor(Model => Model.color)
+
+                        <div class="clear-both"></div>
+                        <div class="col-sm-3">
+                            @Html.TextBoxFor(Model => Model.color, new { @class = "colorIdText form-control" })
+                        </div>
+                        <select class="colorselector">
+                            @foreach (var item in ViewBag.DashboardColors)
+                            {
+                                <option value="@item" data-color="@item"></option>
+                            }
+                        </select>
+
+
+
+                    </div>
+                    @Html.HiddenFor(Model => Model.layoutId, new { @class = "ctlSelectedLayout" })
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Save Changes" />
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

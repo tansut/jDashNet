@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BD8CC26-BCD2-444E-A885-649BCE0018E8}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JDash.MvcDemo</RootNamespace>
+    <AssemblyName>JDash.MvcDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JDash.MySqlProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\JDash.Mvc.Reference\JDash.MySqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.SessionProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\JDash.Mvc.Reference\JDash.SessionProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.SqlProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\JDash.Mvc.Reference\JDash.SqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.DataProvider\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.DataProvider\MySql.Data.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\AngularToDoController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\ChartJSController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\GoogleMapController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\HtmlController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\JVectorMapController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\RssController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\SparkLineController.cs" />
+    <Compile Include="Areas\Dashlets\Controllers\WeatherBoardController.cs" />
+    <Compile Include="Areas\Dashlets\DashletsAreaRegistration.cs" />
+    <Compile Include="Areas\Dashlets\Models\ChartJSModel.cs" />
+    <Compile Include="Areas\Dashlets\Models\JVectorMapModel.cs" />
+    <Compile Include="Areas\Dashlets\Models\RssModels.cs" />
+    <Compile Include="Areas\Dashlets\Models\SparkLineModel.cs" />
+    <Compile Include="Areas\Dashlets\Models\WeatherBoardModel.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\IconActionLinkHelper.cs" />
+    <Compile Include="Areas\Dashlets\Models\HtmlModel.cs" />
+    <Compile Include="Models\DashboardCreationModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\MySQLDashboardProvider.sql" />
+    <Content Include="App_Data\SQLDashboardProvider.sql" />
+    <Content Include="Content\css\bootstrap-colorselector.css" />
+    <Content Include="Content\css\bootstrap-switch.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\add-dashlet-drag-drop.png" />
+    <Content Include="Content\images\dark_leather.jpg" />
+    <Content Include="Content\images\egg_shell.jpg" />
+    <Content Include="Content\images\mysql-logo.jpg" />
+    <Content Include="Content\images\SQL-Server-logo.png" />
+    <Content Include="Content\Themes\Custom\images\icons-18-black-pack.png" />
+    <Content Include="Content\Themes\Custom\images\icons-18-white-pack.png" />
+    <Content Include="Content\Themes\Custom\images\icons-36-black-pack.png" />
+    <Content Include="Content\Themes\Custom\images\icons-36-white-pack.png" />
+    <Content Include="Content\Themes\Custom\images\ui-icon-busy.gif" />
+    <Content Include="Content\Themes\Custom\main.css" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\DashboardModule.js" />
+    <Content Include="Scripts\app\DashboardsMenu.js" />
+    <Content Include="Scripts\bootstrap-colorselector.js" />
+    <Content Include="Scripts\bootstrap-switch.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dashlets\Angular\app.js" />
+    <Content Include="Scripts\dashlets\Angular\editor.js" />
+    <Content Include="Scripts\dashlets\Angular\index.js" />
+    <Content Include="Scripts\dashlets\Angular\todoctrl.js" />
+    <Content Include="Scripts\dashlets\ChartJS\editor.js" />
+    <Content Include="Scripts\dashlets\ChartJS\index.js" />
+    <Content Include="Scripts\dashlets\ChartJS\templates.js" />
+    <Content Include="Scripts\dashlets\GoogleMap\editor.js" />
+    <Content Include="Scripts\dashlets\GoogleMap\index.js" />
+    <Content Include="Scripts\dashlets\GoogleMap\GoogleMapLoader.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\editor.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\index.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\au_mill_en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\ca_lcc_en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\de_mill_en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\europe-mill-en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\fr_mill_en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\tr_mill_en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\uk_mill_en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\us-aea-en.js" />
+    <Content Include="Scripts\dashlets\JVectorMap\maps\world-mill-en.js" />
+    <Content Include="Scripts\dashlets\SparkLine\editor.js" />
+    <Content Include="Scripts\dashlets\SparkLine\index.js" />
+    <Content Include="Scripts\dashlets\weatherBoard\editor.js" />
+    <Content Include="Scripts\dashlets\weatherBoard\index.js" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Cloudy.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\fog.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hail.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\hava.jpg" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-rain.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Light-Showers.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\light-snow.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\lightning.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\line.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Overcast.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\rain.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Showers.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\snow.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Interval.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny-Period.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Sunny.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\thunder.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms-128.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms-16.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms-24.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms-32.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms-48.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\Thunderstorms.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\wind-64.png" />
+    <Content Include="Scripts\dashlets\weatherBoard\resources\wind.png" />
+    <Content Include="Scripts\history.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Dashlets\Views\Web.config" />
+    <Content Include="Areas\Dashlets\Views\Html\Index.cshtml" />
+    <Content Include="Areas\Dashlets\Views\Html\Editor.cshtml" />
+    <Content Include="Areas\Dashlets\Views\ChartJS\Index.cshtml" />
+    <Content Include="Areas\Dashlets\Views\ChartJS\Editor.cshtml" />
+    <Content Include="Areas\Dashlets\Views\SparkLine\Index.cshtml" />
+    <Content Include="Areas\Dashlets\Views\JVectorMap\Index.cshtml" />
+    <Content Include="Areas\Dashlets\Views\JVectorMap\Editor.cshtml" />
+    <Content Include="Areas\Dashlets\Views\AngularTodo\index.cshtml" />
+    <Content Include="Areas\Dashlets\Views\AngularTodo\editor.cshtml" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery.swatchbook.js" />
+    <Content Include="Content\Themes\Custom\main.less" />
+    <Content Include="Areas\Dashlets\Views\GoogleMap\Editor.cshtml" />
+    <Content Include="Areas\Dashlets\Views\GoogleMap\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\file.pubxml" />
+    <None Include="Properties\PublishProfiles\klt.pubxml" />
+    <None Include="Properties\PublishProfiles\smartasp.pubxml" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jvectormap.min.js" />
+    <Content Include="Scripts\jquery.sparkline.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr.custom.79639.js" />
+    <Content Include="Scripts\sly.js" />
+    <Content Include="Scripts\sparkline.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\ConfigDB.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Dashlets\Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Dashlets\Views\Rss\Editor.cshtml" />
+    <Content Include="Areas\Dashlets\Views\Rss\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DashboardEditModule.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DashboardsMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Dashlets\Views\WeatherBoard\Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Dashlets\Views\WeatherBoard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Dashlets\Views\SparkLine\Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JDash.Core\JDash.csproj">
+      <Project>{115849a5-2148-4308-9d86-3b3bb02f43d2}</Project>
+      <Name>JDash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JDash.Mvc\JDash.Mvc.csproj">
+      <Project>{6cc1697b-2d6d-49b8-bb95-6f87d44be94f}</Project>
+      <Name>JDash.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54170</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:30712</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

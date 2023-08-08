@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Projects\Kalitte.Jdash\trunk\Deployment\Management</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_GlobalResources/Global.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="App_GlobalResources/Global.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="App_LocalResources/Default.aspx.resx">
+      <publishTime>09/02/2013 16:54:40</publishTime>
+    </File>
+    <File Include="App_LocalResources/Default.aspx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:40</publishTime>
+    </File>
+    <File Include="bin/JDash.dll">
+      <publishTime>01/10/2015 15:50:23</publishTime>
+    </File>
+    <File Include="bin/JDash.MySqlProvider.dll">
+      <publishTime>01/10/2015 15:39:28</publishTime>
+    </File>
+    <File Include="bin/JDash.SqlProvider.dll">
+      <publishTime>01/10/2015 15:39:28</publishTime>
+    </File>
+    <File Include="bin/JDash.Webform.Management.dll">
+      <publishTime>01/10/2015 16:03:09</publishTime>
+    </File>
+    <File Include="bin/JDash.WebForms.dll">
+      <publishTime>01/10/2015 15:50:23</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>09/03/2014 08:40:59</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.dll">
+      <publishTime>09/03/2014 08:40:59</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/02/2013 16:58:02</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.css">
+      <publishTime>09/02/2013 16:54:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.min.css">
+      <publishTime>09/02/2013 16:54:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/21/2013 12:15:36</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/21/2013 12:15:36</publishTime>
+    </File>
+    <File Include="Content/images/glyphicons-halflings-white.png">
+      <publishTime>09/02/2013 16:54:46</publishTime>
+    </File>
+    <File Include="Content/images/glyphicons-halflings.png">
+      <publishTime>09/02/2013 16:54:46</publishTime>
+    </File>
+    <File Include="Content/images/logo.png">
+      <publishTime>08/05/2014 13:51:01</publishTime>
+    </File>
+    <File Include="Content/images/WorkInProgress.gif">
+      <publishTime>09/02/2013 16:54:46</publishTime>
+    </File>
+    <File Include="Content/styles.css">
+      <publishTime>08/05/2014 13:51:01</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/AuthenticationEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/AuthenticationEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/MetadataEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/MetadataEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/TagEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/TagEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/TagItemEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/App_LocalResources/TagItemEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/AuthenticationEditor.ascx">
+      <publishTime>12/21/2013 15:16:44</publishTime>
+    </File>
+    <File Include="Controls/Common/MetadataEditor.ascx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/TagEditor.ascx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Common/TagItemEditor.ascx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/Dashboard/App_LocalResources/DashboardEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Controls/Dashboard/App_LocalResources/DashboardEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Controls/Dashboard/DashboardEditor.ascx">
+      <publishTime>12/26/2013 15:21:18</publishTime>
+    </File>
+    <File Include="Controls/DashletModule/App_LocalResources/DashletCommandEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/DashletModule/App_LocalResources/DashletCommandEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/DashletModule/App_LocalResources/DashletModuleEditor.ascx.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/DashletModule/App_LocalResources/DashletModuleEditor.ascx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:45</publishTime>
+    </File>
+    <File Include="Controls/DashletModule/DashletCommandEditor.ascx">
+      <publishTime>12/26/2013 15:21:18</publishTime>
+    </File>
+    <File Include="Controls/DashletModule/DashletModuleEditor.ascx">
+      <publishTime>08/05/2014 13:51:01</publishTime>
+    </File>
+    <File Include="Core/Controls/UI/JDashChekBoxGroup.ascx">
+      <publishTime>12/21/2013 15:16:44</publishTime>
+    </File>
+    <File Include="Core/Controls/UI/JDashLabeledDropDown.ascx">
+      <publishTime>12/21/2013 12:15:35</publishTime>
+    </File>
+    <File Include="Core/Controls/UI/JDashLabeledTextBox.ascx">
+      <publishTime>12/21/2013 12:15:35</publishTime>
+    </File>
+    <File Include="default.aspx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="MasterPages/Management.Master">
+      <publishTime>08/05/2014 13:51:01</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/02/2013 16:54:40</publishTime>
+    </File>
+    <File Include="Pages/Dashboard/App_LocalResources/Dashboard.aspx.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Pages/Dashboard/App_LocalResources/Dashboard.aspx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Pages/Dashboard/Dashboard.aspx">
+      <publishTime>12/21/2013 12:15:35</publishTime>
+    </File>
+    <File Include="Pages/DashletModule/App_LocalResources/DashletModule.aspx.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Pages/DashletModule/App_LocalResources/DashletModule.aspx.tr-tr.resx">
+      <publishTime>09/02/2013 16:54:44</publishTime>
+    </File>
+    <File Include="Pages/DashletModule/DashletModule.aspx">
+      <publishTime>08/05/2014 13:51:01</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/21/2013 12:15:35</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/21/2013 12:15:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>09/02/2013 16:54:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>12/21/2013 12:15:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>09/02/2013 16:54:43</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/10/2015 15:59:42</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

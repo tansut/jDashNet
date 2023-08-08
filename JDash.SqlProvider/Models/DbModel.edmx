@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DashModelStoreContainer">
+          <EntitySet Name="Dashboard" EntityType="DashModel.Store.Dashboard" store:Type="Tables" Schema="dbo"  />
+          <EntitySet Name="Dashlet" EntityType="DashModel.Store.Dashlet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DashletModule" EntityType="DashModel.Store.DashletModule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EntityAuth" EntityType="DashModel.Store.EntityAuth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="DashModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagRelation" EntityType="DashModel.Store.TagRelation" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Dashlets_Dashboard" Association="DashModel.Store.FK_Dashlets_Dashboard">
+            <End Role="Dashboard" EntitySet="Dashboard" />
+            <End Role="Dashlet" EntitySet="Dashlet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dashlets_DashletModules" Association="DashModel.Store.FK_Dashlets_DashletModules">
+            <End Role="DashletModule" EntitySet="DashletModule" />
+            <End Role="Dashlet" EntitySet="Dashlet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_Dashboard" Association="DashModel.Store.FK_TagRelation_Dashboard">
+            <End Role="Dashboard" EntitySet="Dashboard" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_DashletModule" Association="DashModel.Store.FK_TagRelation_DashletModule">
+            <End Role="DashletModule" EntitySet="DashletModule" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_Dashlets" Association="DashModel.Store.FK_TagRelation_Dashlets">
+            <End Role="Dashlet" EntitySet="Dashlet" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_Tags" Association="DashModel.Store.FK_TagRelation_Tags">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Dashboard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" MaxLength="250" />
+          <Property Name="layout" Type="ntext" Nullable="false" />
+          <Property Name="config" Type="ntext" />
+          <Property Name="paneConfig" Type="ntext" />
+          <Property Name="style" Type="ntext" />
+          <Property Name="cls" Type="ntext" />
+          <Property Name="attr" Type="ntext" />
+          <Property Name="groupName" Type="nvarchar" MaxLength="150" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="createdBy" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="modifiedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="sharedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="created" Type="datetime" Nullable="false" />
+          <Property Name="modified" Type="datetime" />
+          <Property Name="shared" Type="datetime" />
+          <Property Name="userData" Type="ntext" />
+          <Property Name="viewOrder" Type="int" />
+          <Property Name="groupOrder" Type="int" />
+          <Property Name="UserProperty1" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserProperty2" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserProperty3" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Dashlet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dashboardId" Type="int" Nullable="false" />
+          <Property Name="dashletModuleId" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="config" Type="ntext" />
+          <Property Name="paneConfig" Type="ntext" />
+          <Property Name="position" Type="ntext" Nullable="false" />
+          <Property Name="style" Type="ntext" />
+          <Property Name="cls" Type="ntext" />
+          <Property Name="attr" Type="ntext" />
+          <Property Name="groupName" Type="nvarchar" MaxLength="150" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="createdBy" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="modifiedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="sharedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="created" Type="datetime" Nullable="false" />
+          <Property Name="modified" Type="datetime" />
+          <Property Name="shared" Type="datetime" />
+          <Property Name="userData" Type="ntext" />
+          <Property Name="UserProperty1" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserProperty2" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserProperty3" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DashletModule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="path" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="config" Type="ntext" Nullable="false" />
+          <Property Name="paneConfig" Type="ntext" Nullable="false" />
+          <Property Name="dashletConfig" Type="ntext" Nullable="false" />
+          <Property Name="style" Type="ntext" />
+          <Property Name="cls" Type="ntext" />
+          <Property Name="attr" Type="ntext" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="createdBy" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="modifiedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="sharedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="created" Type="datetime" Nullable="false" />
+          <Property Name="modified" Type="datetime" />
+          <Property Name="shared" Type="datetime" />
+          <Property Name="groupName" Type="nvarchar" MaxLength="150" />
+          <Property Name="userData" Type="ntext" />
+          <Property Name="viewOrder" Type="int" />
+          <Property Name="groupOrder" Type="int" />
+          <Property Name="UserProperty1" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserProperty2" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserProperty3" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="EntityAuth">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="entityType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="entityId" Type="int" Nullable="false" />
+          <Property Name="roleOrUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="permission" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="authType" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tagName" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="TagRelation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tagId" Type="int" Nullable="false" />
+          <Property Name="controlId" Type="int" Nullable="false" />
+          <Property Name="controller" Type="nvarchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <Association Name="FK_Dashlets_Dashboard">
+          <End Role="Dashboard" Type="DashModel.Store.Dashboard" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dashlet" Type="DashModel.Store.Dashlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dashboard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Dashlet">
+              <PropertyRef Name="dashboardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dashlets_DashletModules">
+          <End Role="DashletModule" Type="DashModel.Store.DashletModule" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dashlet" Type="DashModel.Store.Dashlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DashletModule">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Dashlet">
+              <PropertyRef Name="dashletModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_Dashboard">
+          <End Role="Dashboard" Type="DashModel.Store.Dashboard" Multiplicity="1" />
+          <End Role="TagRelation" Type="DashModel.Store.TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dashboard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="controlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_DashletModule">
+          <End Role="DashletModule" Type="DashModel.Store.DashletModule" Multiplicity="1" />
+          <End Role="TagRelation" Type="DashModel.Store.TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DashletModule">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="controlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_Dashlets">
+          <End Role="Dashlet" Type="DashModel.Store.Dashlet" Multiplicity="1" />
+          <End Role="TagRelation" Type="DashModel.Store.TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dashlet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="controlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_Tags">
+          <End Role="Tag" Type="DashModel.Store.Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagRelation" Type="DashModel.Store.TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="tagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DashModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DashEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dashboard" EntityType="DashModel.Dashboard" />
+          <EntitySet Name="Dashlet" EntityType="DashModel.Dashlet" />
+          <EntitySet Name="DashletModule" EntityType="DashModel.DashletModule" />
+          <EntitySet Name="EntityAuth" EntityType="DashModel.EntityAuth" />
+          <EntitySet Name="Tag" EntityType="DashModel.Tag" />
+          <EntitySet Name="TagRelation" EntityType="DashModel.TagRelation" />
+          <AssociationSet Name="FK_Dashlets_Dashboard" Association="DashModel.FK_Dashlets_Dashboard">
+            <End Role="Dashboard" EntitySet="Dashboard" />
+            <End Role="Dashlet" EntitySet="Dashlet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_Dashboard" Association="DashModel.FK_TagRelation_Dashboard">
+            <End Role="Dashboard" EntitySet="Dashboard" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dashlets_DashletModules" Association="DashModel.FK_Dashlets_DashletModules">
+            <End Role="DashletModule" EntitySet="DashletModule" />
+            <End Role="Dashlet" EntitySet="Dashlet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_Dashlets" Association="DashModel.FK_TagRelation_Dashlets">
+            <End Role="Dashlet" EntitySet="Dashlet" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_DashletModule" Association="DashModel.FK_TagRelation_DashletModule">
+            <End Role="DashletModule" EntitySet="DashletModule" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagRelation_Tags" Association="DashModel.FK_TagRelation_Tags">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="TagRelation" EntitySet="TagRelation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Dashboard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="layout" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="config" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="paneConfig" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="style" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cls" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="attr" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="groupName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="createdBy" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="modifiedBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sharedBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="created" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="modified" Precision="3" />
+          <Property Type="DateTime" Name="shared" Precision="3" />
+          <Property Type="String" Name="userData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="viewOrder" />
+          <Property Type="Int32" Name="groupOrder" />
+          <NavigationProperty Name="Dashlet" Relationship="DashModel.FK_Dashlets_Dashboard" FromRole="Dashboard" ToRole="Dashlet" />
+          <NavigationProperty Name="TagRelation" Relationship="DashModel.FK_TagRelation_Dashboard" FromRole="Dashboard" ToRole="TagRelation" />
+          <Property Type="String" Name="UserProperty1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserProperty2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserProperty3" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Dashlet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="dashboardId" Nullable="false" />
+          <Property Type="Int32" Name="dashletModuleId" Nullable="false" />
+          <Property Type="String" Name="title" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="config" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="paneConfig" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="position" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="style" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cls" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="attr" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="groupName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="createdBy" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="modifiedBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sharedBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="created" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="modified" Precision="3" />
+          <Property Type="DateTime" Name="shared" Precision="3" />
+          <Property Type="String" Name="userData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dashboard" Relationship="DashModel.FK_Dashlets_Dashboard" FromRole="Dashlet" ToRole="Dashboard" />
+          <NavigationProperty Name="DashletModule" Relationship="DashModel.FK_Dashlets_DashletModules" FromRole="Dashlet" ToRole="DashletModule" />
+          <NavigationProperty Name="TagRelation" Relationship="DashModel.FK_TagRelation_Dashlets" FromRole="Dashlet" ToRole="TagRelation" />
+          <Property Type="String" Name="UserProperty1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserProperty2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserProperty3" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DashletModule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="path" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="config" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="paneConfig" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="dashletConfig" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="style" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cls" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="attr" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="createdBy" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="modifiedBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sharedBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="created" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="modified" Precision="3" />
+          <Property Type="DateTime" Name="shared" Precision="3" />
+          <Property Type="String" Name="groupName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="viewOrder" />
+          <Property Type="Int32" Name="groupOrder" />
+          <NavigationProperty Name="Dashlet" Relationship="DashModel.FK_Dashlets_DashletModules" FromRole="DashletModule" ToRole="Dashlet" />
+          <NavigationProperty Name="TagRelation" Relationship="DashModel.FK_TagRelation_DashletModule" FromRole="DashletModule" ToRole="TagRelation" />
+          <Property Type="String" Name="UserProperty1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserProperty2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserProperty3" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EntityAuth">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="entityType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="entityId" Nullable="false" />
+          <Property Type="String" Name="roleOrUser" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="permission" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="authType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="tagName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TagRelation" Relationship="DashModel.FK_TagRelation_Tags" FromRole="Tag" ToRole="TagRelation" />
+        </EntityType>
+        <EntityType Name="TagRelation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="tagId" Nullable="false" />
+          <Property Type="Int32" Name="controlId" Nullable="false" />
+          <Property Type="String" Name="controller" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dashboard" Relationship="DashModel.FK_TagRelation_Dashboard" FromRole="TagRelation" ToRole="Dashboard" />
+          <NavigationProperty Name="Dashlet" Relationship="DashModel.FK_TagRelation_Dashlets" FromRole="TagRelation" ToRole="Dashlet" />
+          <NavigationProperty Name="DashletModule" Relationship="DashModel.FK_TagRelation_DashletModule" FromRole="TagRelation" ToRole="DashletModule" />
+          <NavigationProperty Name="Tag" Relationship="DashModel.FK_TagRelation_Tags" FromRole="TagRelation" ToRole="Tag" />
+        </EntityType>
+        <Association Name="FK_Dashlets_Dashboard">
+          <End Type="DashModel.Dashboard" Role="Dashboard" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DashModel.Dashlet" Role="Dashlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dashboard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Dashlet">
+              <PropertyRef Name="dashboardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_Dashboard">
+          <End Type="DashModel.Dashboard" Role="Dashboard" Multiplicity="1" />
+          <End Type="DashModel.TagRelation" Role="TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dashboard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="controlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dashlets_DashletModules">
+          <End Type="DashModel.DashletModule" Role="DashletModule" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DashModel.Dashlet" Role="Dashlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DashletModule">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Dashlet">
+              <PropertyRef Name="dashletModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_Dashlets">
+          <End Type="DashModel.Dashlet" Role="Dashlet" Multiplicity="1" />
+          <End Type="DashModel.TagRelation" Role="TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dashlet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="controlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_DashletModule">
+          <End Type="DashModel.DashletModule" Role="DashletModule" Multiplicity="1" />
+          <End Type="DashModel.TagRelation" Role="TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DashletModule">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="controlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagRelation_Tags">
+          <End Type="DashModel.Tag" Role="Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DashModel.TagRelation" Role="TagRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TagRelation">
+              <PropertyRef Name="tagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DashModelStoreContainer" CdmEntityContainer="DashEntity">
+          <EntitySetMapping Name="Dashboard">
+            <EntityTypeMapping TypeName="DashModel.Dashboard">
+              <MappingFragment StoreEntitySet="Dashboard">
+                <ScalarProperty Name="UserProperty3" ColumnName="UserProperty3" />
+                <ScalarProperty Name="UserProperty2" ColumnName="UserProperty2" />
+                <ScalarProperty Name="UserProperty1" ColumnName="UserProperty1" />
+                <ScalarProperty Name="groupOrder" ColumnName="groupOrder" />
+                <ScalarProperty Name="viewOrder" ColumnName="viewOrder" />
+                <ScalarProperty Name="userData" ColumnName="userData" />
+                <ScalarProperty Name="shared" ColumnName="shared" />
+                <ScalarProperty Name="modified" ColumnName="modified" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+                <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="attr" ColumnName="attr" />
+                <ScalarProperty Name="cls" ColumnName="cls" />
+                <ScalarProperty Name="style" ColumnName="style" />
+                <ScalarProperty Name="paneConfig" ColumnName="paneConfig" />
+                <ScalarProperty Name="config" ColumnName="config" />
+                <ScalarProperty Name="layout" ColumnName="layout" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dashlet">
+            <EntityTypeMapping TypeName="DashModel.Dashlet">
+              <MappingFragment StoreEntitySet="Dashlet">
+                <ScalarProperty Name="UserProperty3" ColumnName="UserProperty3" />
+                <ScalarProperty Name="UserProperty2" ColumnName="UserProperty2" />
+                <ScalarProperty Name="UserProperty1" ColumnName="UserProperty1" />
+                <ScalarProperty Name="userData" ColumnName="userData" />
+                <ScalarProperty Name="shared" ColumnName="shared" />
+                <ScalarProperty Name="modified" ColumnName="modified" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+                <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="attr" ColumnName="attr" />
+                <ScalarProperty Name="cls" ColumnName="cls" />
+                <ScalarProperty Name="style" ColumnName="style" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="paneConfig" ColumnName="paneConfig" />
+                <ScalarProperty Name="config" ColumnName="config" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="dashletModuleId" ColumnName="dashletModuleId" />
+                <ScalarProperty Name="dashboardId" ColumnName="dashboardId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DashletModule">
+            <EntityTypeMapping TypeName="DashModel.DashletModule">
+              <MappingFragment StoreEntitySet="DashletModule">
+                <ScalarProperty Name="UserProperty3" ColumnName="UserProperty3" />
+                <ScalarProperty Name="UserProperty2" ColumnName="UserProperty2" />
+                <ScalarProperty Name="UserProperty1" ColumnName="UserProperty1" />
+                <ScalarProperty Name="groupOrder" ColumnName="groupOrder" />
+                <ScalarProperty Name="viewOrder" ColumnName="viewOrder" />
+                <ScalarProperty Name="userData" ColumnName="userData" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="shared" ColumnName="shared" />
+                <ScalarProperty Name="modified" ColumnName="modified" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+                <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="attr" ColumnName="attr" />
+                <ScalarProperty Name="cls" ColumnName="cls" />
+                <ScalarProperty Name="style" ColumnName="style" />
+                <ScalarProperty Name="dashletConfig" ColumnName="dashletConfig" />
+                <ScalarProperty Name="paneConfig" ColumnName="paneConfig" />
+                <ScalarProperty Name="config" ColumnName="config" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntityAuth">
+            <EntityTypeMapping TypeName="DashModel.EntityAuth">
+              <MappingFragment StoreEntitySet="EntityAuth">
+                <ScalarProperty Name="authType" ColumnName="authType" />
+                <ScalarProperty Name="permission" ColumnName="permission" />
+                <ScalarProperty Name="roleOrUser" ColumnName="roleOrUser" />
+                <ScalarProperty Name="entityId" ColumnName="entityId" />
+                <ScalarProperty Name="entityType" ColumnName="entityType" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tag">
+            <EntityTypeMapping TypeName="DashModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="tagName" ColumnName="tagName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagRelation">
+            <EntityTypeMapping TypeName="DashModel.TagRelation">
+              <MappingFragment StoreEntitySet="TagRelation">
+                <ScalarProperty Name="controller" ColumnName="controller" />
+                <ScalarProperty Name="controlId" ColumnName="controlId" />
+                <ScalarProperty Name="tagId" ColumnName="tagId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

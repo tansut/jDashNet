@@ -1,0 +1,27 @@
+﻿{
+	"name": "jdash",
+	"version":"1.0.0",
+	"dependencies": {
+	   "dojo":"1.9.2",
+	   "klt":"1.0.0"
+	},
+	"main": "main",
+    "directories": {
+		"lib": "."
+	},
+	"description": "Javascript dashboard",
+	"licenses": [
+		 {
+				 "type": "AFLv2.1",
+				 "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+		 },
+		 {
+				 "type": "BSD",
+				 "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+		 }
+	],
+	"bugs": "http://bugs.jdash.net/",
+	"keywords": ["JavaScript", "Dojo", "Toolkit"],
+	"homepage": "http://jdash.net/",
+	"dojoBuild": "package.js"
+}

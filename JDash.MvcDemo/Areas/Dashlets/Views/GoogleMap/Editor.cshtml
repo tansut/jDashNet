@@ -1,0 +1,25 @@
+﻿@using JDash.Mvc
+<div>
+    @using (Ajax.BeginForm(new AjaxOptions() { }))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Set Chart Options</legend>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.Label("Title")
+                    @Html.JDash().DashletTitleEditor().Css("form-control").Render()
+                </div>
+                <div class="col-md-6">
+                    @Html.Label("Style")
+                    @Html.JDash().DashletStylesList().Render()
+                </div>
+            </div>
+        </fieldset>
+    }
+
+
+</div>

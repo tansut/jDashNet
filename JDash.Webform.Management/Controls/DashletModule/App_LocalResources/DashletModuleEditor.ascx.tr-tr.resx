@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ctlAddCustomCommand.Text" xml:space="preserve">
+    <value>Yeni Komut Ekle</value>
+  </data>
+  <data name="ctlAutoEdit.Title" xml:space="preserve">
+    <value>Kullanıcı Dashlet eklediğinde editörü otomatik olarak aç</value>
+  </data>
+  <data name="ctlCancelButton.Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="ctlClientModulePath.Help" xml:space="preserve">
+    <value>Dizin içerisinde .Js uzantısı belirtilmemelidir. Ayrıntılı bilgi için  &lt;a href="http://requirejs.org/"&gt; RequireJs&lt;/a&gt; sitesini ziyaret edin.</value>
+  </data>
+  <data name="ctlClientModulePath.Info" xml:space="preserve">
+    <value>İstemci modülü dosya dizini örn :  i.e. /Dashlets/MyDashlet</value>
+  </data>
+  <data name="ctlClientModulePath.Title" xml:space="preserve">
+    <value>İstemci Dashlet dizini</value>
+  </data>
+  <data name="ctlConfig.Title" xml:space="preserve">
+    <value>JSON olarak ayarlar</value>
+  </data>
+  <data name="ctlControlPath.Info" xml:space="preserve">
+    <value>Kontrolcü dizini örn: ~/Controls/MyDashlet.ascx</value>
+  </data>
+  <data name="ctlControlPath.Title" xml:space="preserve">
+    <value>Kontrol Dizini</value>
+  </data>
+  <data name="ctlCssClass.Info" xml:space="preserve">
+    <value>Dashlet örneklerine uygulanan CSS sınıf ismi</value>
+  </data>
+  <data name="ctlCssClass.Title" xml:space="preserve">
+    <value>CSS Sınıfı</value>
+  </data>
+  <data name="ctlDashboardType.Title" xml:space="preserve">
+    <value>Tür</value>
+  </data>
+  <data name="ctlDashletConfig.Info" xml:space="preserve">
+    <value>Varsayılan dashlet özelliklerini kullan</value>
+  </data>
+  <data name="ctlDashletConfig.Title" xml:space="preserve">
+    <value>JSON olarak dashlet ayarları</value>
+  </data>
+  <data name="ctlDescrition.Info" xml:space="preserve">
+    <value>Dashlet açıklaması</value>
+  </data>
+  <data name="ctlDescrition.Title" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="ctlEditable.Title" xml:space="preserve">
+    <value>Dashletler kullanıcı tarafından düzenlenebilir</value>
+  </data>
+  <data name="ctlEditorClientModulePath.Help" xml:space="preserve">
+    <value>Dizin içerisinde .Js uzantısı belirtilmemelidir. Ayrıntılı bilgi için  &lt;a href="http://requirejs.org/"&gt; RequireJs&lt;/a&gt; sitesini ziyaret edin.</value>
+  </data>
+  <data name="ctlEditorClientModulePath.Info" xml:space="preserve">
+    <value>İstemci modülü javascript dizini örn /Dashlets/MyDashletEditor</value>
+  </data>
+  <data name="ctlEditorControlPath.Info" xml:space="preserve">
+    <value>Kontrolcü dizini  i.e. ~/Controls/MyDashletEditor.ascx</value>
+  </data>
+  <data name="ctlEditorControlPath.Title" xml:space="preserve">
+    <value>Kontrolcü Dizini</value>
+  </data>
+  <data name="ctlGroup.Info" xml:space="preserve">
+    <value>Bir grup ismi yazın</value>
+  </data>
+  <data name="ctlGroup.Title" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="ctlHeigth.Info" xml:space="preserve">
+    <value>Editör yüksekliği örn: 400px</value>
+  </data>
+  <data name="ctlHeigth.Title" xml:space="preserve">
+    <value>Yükeseklik</value>
+  </data>
+  <data name="ctlLayout.Title" xml:space="preserve">
+    <value>JSON olarak düzen ayarları</value>
+  </data>
+  <data name="ctlMaximizeable.Title" xml:space="preserve">
+    <value>Dashlet gösterge paneli üzerine genişletilebilir</value>
+  </data>
+  <data name="ctlMetadata.Info" xml:space="preserve">
+    <value>Metadata ayarları</value>
+  </data>
+  <data name="ctlMetadata.Title" xml:space="preserve">
+    <value>JSON olarak metadata</value>
+  </data>
+  <data name="ctlModuleConfig.Info" xml:space="preserve">
+    <value>Dashlet module ayarları</value>
+  </data>
+  <data name="ctlModuleConfig.Title" xml:space="preserve">
+    <value>JSON olarak module ayarları</value>
+  </data>
+  <data name="ctlPaneConfig.Info" xml:space="preserve">
+    <value>Dashlet çerçeve ayarları</value>
+  </data>
+  <data name="ctlPaneConfig.Title" xml:space="preserve">
+    <value>JSON olarak çerçeve ayarları</value>
+  </data>
+  <data name="ctlRefreshable.Title" xml:space="preserve">
+    <value>Dashlet içeriği tekrar tazelenebilir</value>
+  </data>
+  <data name="ctlRemoveable.Title" xml:space="preserve">
+    <value>Kullanıcılar dashletleri silebilir</value>
+  </data>
+  <data name="ctlRemoveButton.Text" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="ctlShowInsideWindow.Title" xml:space="preserve">
+    <value>Düzenleyiciyi pencere içerisinde göster</value>
+  </data>
+  <data name="ctlSubmitButton.Text" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="ctlTitle.Info" xml:space="preserve">
+    <value>Gosterge paneli başlığı</value>
+  </data>
+  <data name="ctlTitle.Title" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="ctlUseCustomGroup.Title" xml:space="preserve">
+    <value>Özel grup ismi kullan</value>
+  </data>
+  <data name="ctlUseDefaultModule.Title" xml:space="preserve">
+    <value>Varsayılan istemci modülünü kullan</value>
+  </data>
+  <data name="ctlWidth.Info" xml:space="preserve">
+    <value>Editör genişliği örn: 400px</value>
+  </data>
+  <data name="ctlWidth.Title" xml:space="preserve">
+    <value>Genişlik</value>
+  </data>
+  <data name="customCommands.Text" xml:space="preserve">
+    <value>Özel Komutlar</value>
+  </data>
+  <data name="modalHeader.Text" xml:space="preserve">
+    <value>Dashlet Modül Editörü</value>
+  </data>
+  <data name="tabDashletConfig.Text" xml:space="preserve">
+    <value>Dashlet Ayarları</value>
+  </data>
+  <data name="tabGeneral.Text" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="tabMetadata.Text" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="tabModuleConfig.Text" xml:space="preserve">
+    <value>Modül Ayarları</value>
+  </data>
+  <data name="tabPaneCommands.Text" xml:space="preserve">
+    <value>Çerçeve Komutları</value>
+  </data>
+  <data name="tabPaneConfig.Text" xml:space="preserve">
+    <value>Çerçeve Ayarları</value>
+  </data>
+  <data name="ctlEditButton.Text" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="ctlNotifyMaximize.Title" xml:space="preserve">
+    <value>Genişlediğinde bilgilendir</value>
+  </data>
+  <data name="ctlNotifyOnRefresh.Title" xml:space="preserve">
+    <value>Tekrar tazelendiğinde bilgilendir</value>
+  </data>
+  <data name="ctlNotifyOnRemove.Title" xml:space="preserve">
+    <value>Silindiğinde bilgilendir</value>
+  </data>
+  <data name="tabAuthentication.Text" xml:space="preserve">
+    <value>Yetkilendirme</value>
+  </data>
+</root>

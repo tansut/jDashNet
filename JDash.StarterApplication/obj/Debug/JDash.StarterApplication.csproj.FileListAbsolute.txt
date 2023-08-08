@@ -1,0 +1,9 @@
+E:\temp\jdash\JDash.StarterApplication\bin\Debug\JDash.StarterApplication.exe.config
+E:\temp\jdash\JDash.StarterApplication\bin\Debug\JDash.StarterApplication.exe
+E:\temp\jdash\JDash.StarterApplication\bin\Debug\JDash.StarterApplication.pdb
+E:\temp\jdash\JDash.StarterApplication\obj\Debug\JDash.StarterApplication.csprojResolveAssemblyReference.cache
+E:\temp\jdash\JDash.StarterApplication\obj\Debug\JDash.StarterApplication.Main.resources
+E:\temp\jdash\JDash.StarterApplication\obj\Debug\JDash.StarterApplication.Properties.Resources.resources
+E:\temp\jdash\JDash.StarterApplication\obj\Debug\JDash.StarterApplication.csproj.GenerateResource.Cache
+E:\temp\jdash\JDash.StarterApplication\obj\Debug\JDash.StarterApplication.exe
+E:\temp\jdash\JDash.StarterApplication\obj\Debug\JDash.StarterApplication.pdb

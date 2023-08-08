@@ -1,0 +1,5 @@
+E:\temp\jdash\JDash.WebForms\obj\Debug\JDash.WebForms.csprojResolveAssemblyReference.cache
+E:\temp\jdash\JDash.WebForms\obj\Debug\JDash.WebForms.csproj.ResolveComReference.cache
+E:\temp\jdash\JDash.WebForms\obj\Debug\JDash.WebForms.Design.FmAbout.resources
+E:\temp\jdash\JDash.WebForms\obj\Debug\JDash.WebForms.Design.FmProvider.resources
+E:\temp\jdash\JDash.WebForms\obj\Debug\JDash.WebForms.csproj.GenerateResource.Cache

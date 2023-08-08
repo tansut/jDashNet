@@ -1,0 +1,7 @@
+E:\temp\jdash\JDash.Core\obj\Debug\JDash.csprojResolveAssemblyReference.cache
+E:\temp\PreDeploy\JDash.dll.config
+E:\temp\PreDeploy\JDash.XML
+E:\temp\PreDeploy\JDash.dll
+E:\temp\PreDeploy\JDash.pdb
+E:\temp\jdash\JDash.Core\obj\Debug\JDash.dll
+E:\temp\jdash\JDash.Core\obj\Debug\JDash.pdb

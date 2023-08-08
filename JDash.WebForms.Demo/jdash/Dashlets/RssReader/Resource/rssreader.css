@@ -1,0 +1,22 @@
+﻿.rssReader .d-dashlet-content {
+    padding:0px;
+}
+
+ul.rssList
+{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+ul.rssList li {
+    padding:7px;
+    clear:both;
+}
+
+/*ul.rssList li:nth-child(odd) {  }
+ul.rssList li:nth-child(even)
+{
+    background-color: #F4F4F4;
+}*/
+

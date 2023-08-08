@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kalitte Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="/scripts/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body
+        {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .containerItem
+        {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+
+
+        .themeRect
+        {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        footer
+        {
+            background-color: #FFFFFF;
+            color: #999999;
+            text-align: center;
+            background-image: -moz-linear-gradient(top, #F5F5F5, #FFFFFF);
+            border-collapse: collapse;
+            border-top: 1px solid #CCCCCC;
+            padding: 15px;
+            background: -webkit-linear-gradient(top, #F5F5F5, #FFFFFF);
+        }
+
+            footer a, footer a:visited
+            {
+                color: #999999;
+                text-decoration: none;
+            }
+
+        form div.field
+        {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+            form div.field.last
+            {
+                margin-bottom: 0px;
+            }
+
+        input, select,
+        textarea,
+        label
+        {
+            margin-bottom: 2px;
+        }
+
+        input, select, textarea
+        {
+            width: 95%;
+            overflow:hidden;
+        }
+
+            input[type="checkbox"]
+            {
+                width: auto;
+            }
+
+
+        label
+        {
+            display: block;
+        }
+    </style>
+    <link href="/scripts/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/scripts/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/scripts/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/scripts/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/scripts/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/scripts/bootstrap/ico/favicon.png">
+
+    <script>
+        var dojoConfig = {
+            async: true,
+        }
+    </script>
+
+    <script src="/scripts/dojo/dojo.js"></script>
+    <script src="/scripts/bootstrap/js/jquery.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-button.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="/scripts/bootstrap/js/bootstrap-typeahead.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand">JsDash</a>
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav">
+                        <li><a id="addDashletsLink" href="#">+Add Dashlets</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Mode <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" id="goReadonlyModeLink">Readonly</a></li>
+                                <li><a href="#" id="goEditModeLink">Edit View</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Design <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" id="changeLayoutLink">Change Layout</a></li>
+                                <li><a href="#" id="deleteDashboardLink">Delete Dashboard</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav pull-right" id="themesList">
+                        <li><a>Loaded themes</a></li>
+                    </ul>
+
+
+                </div>
+                <!--/.nav-collapse -->
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="layoutDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Change Layout</h3>
+        </div>
+        <div class="modal-body">
+            <div id="layoutDiv"></div>
+
+        </div>
+
+    </div>
+
+    <div class="containerItem tabbable tabs-left hide" id="dashletsDialog">
+
+        <button type="button" class="close" onclick="$(this).parent().hide();" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Add Dashlets</h3>
+
+        <p>Please click or drop a dashlet</p>
+        <ul class="nav nav-tabs " id="dashletsTab">
+        </ul>
+        <div class="tab-content">
+            <ul class="nav nav-tabs nav-stacked" id="dashletsList">
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="">
+        <div style="background-color:bisque; width:30px; height:30px;" data-jdash-moduleid="97">d3</div>
+        <div style="background-color:aqua; width:30px; height:30px;" data-jdash-moduleid="112">dojo</div>
+        <ul class="nav nav-pills" id="dashboardsList">
+            <li><a href="#createDashboardDiv" data-toggle="modal">+New</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="dashboard"></div>
+        </div>
+
+        <footer>
+            <p>© 2009 - 2012 Kalitte. All rights reserved. </p>
+            <p>
+                Visit
+                <a target="_blank" href="http://www.dynamicdashboards.net">www.dynamicdashboards.net</a>
+                for licensing options.
+            </p>
+        </footer>
+
+    </div>
+
+
+
+
+
+    <div id="createDashboardDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">New Dashboard</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputDashboardTitle">Dashboard Title</label>
+                    <div class="controls">
+                        <input type="text" id="inputDashboardTitle" placeholder="Title">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputLayout">Layout</label>
+                    <div class="controls">
+                        <select id="inputLayout">
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary" id="createDashboardBtn">Create</button>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        require(["jdash/ui/DashboardView",
+                 "jdash/core/DesignMode",
+                 "jdash/model/DashboardModel",
+                 "jdash/ui/ThemeManager",
+                 "jdash/layout/LayoutManager",
+                 "jdash/model/DashletModel",
+                 "klt/core/when","dojo/dom-construct"],
+        function (DashboardView, DesignMode, DashboardModel, ThemeManager, LayoutManager, DashletModel, when,domConstruct) {
+            ThemeManager.loadFromCookie();
+
+            var dashboardView = new DashboardView({ designMode: DesignMode.full });
+            dashboardView.startup();
+            var provider = dashboardView.provider;
+
+            function loadThemes() {
+                var themes = ThemeManager.getThemes();
+                for (var tid in themes) {
+                    var theme = themes[tid];
+                    var li = $('<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">' + tid + '<b class="caret"></b></a></li>');
+                    var ul = $('<ul class="dropdown-menu"></ul>');
+                    var styles = theme.styles;
+                    for (var sid in styles) {
+                        (function () {
+                            var style = styles[sid];
+                            var themeLink = $('<a href="#">' + '<div class="themeRect" style="background-color:' + style.color + '"></div>' + style.title + '</a>');
+                            themeLink.data("themeid", tid);
+                            themeLink.data("styleid", sid);
+                            themeLink.click(function () {
+                                ThemeManager.select($(this).data("themeid"), $(this).data("styleid"));
+                                ThemeManager.saveToCookie();
+                            });
+                            var li = $('<li' + '></li>');
+                            themeLink.appendTo(li);
+                            li.appendTo(ul);
+                        })();
+                    }
+                    ul.appendTo(li);
+                    li.appendTo("#themesList");
+                }
+            }
+
+            function loadDashboard(link) {
+                var model = $(link).data("dashboard");
+                $(link).tab('show');
+                if (dashboardView.isLoaded()) {
+                    dashboardView.destroyRecursive();
+                    dashboardView = new DashboardView({ designMode: DesignMode.full });
+                    dashboardView.startup();
+                }
+                when(dashboardView.load(model),function(result)
+                {
+                    domConstruct.place(dashboardView.domNode, "dashboard");
+                });
+            }
+
+            function createDashboardTab(model, load) {
+
+                var dashboardLink = $('<a href="#db' + model.id + '" data-toggle="tab">' + model.title + "</a>");
+                dashboardLink.data("dashboard", model);
+                dashboardLink.click(function () {
+                    loadDashboard(this);
+                });
+                var li = $("<li></li>");
+                dashboardLink.appendTo(li);
+                li.appendTo("#dashboardsList");
+                if (load)
+                    loadDashboard(dashboardLink);
+                return dashboardLink;
+            }
+
+            function bindNewDashboardDialog() {
+                var layouts = LayoutManager.list();
+                for (var lid in layouts) {
+                    $('<option>' + lid + "</option>").appendTo("#inputLayout");
+                }
+
+                $("#createDashboardBtn").click(function () {
+                    var title = $("#inputDashboardTitle").val();
+                    var layout = $("#inputLayout").val();
+
+                    var newDashboardModel = new DashboardModel({
+                        title: title,
+                        metaData: {
+                            group: "You!",
+                            createdBy: "app"
+                        },
+                        layout: layout || "main"
+                    });
+
+                    when(provider.createDashboard(newDashboardModel), function (result) {
+                        $("#createDashboardDiv").modal("hide");
+                        createDashboardTab(result, true);
+
+                    }, function (err) {
+                        alert("Error creating dashboard " + err.message);
+                        console.error(err);
+                    });
+
+                });
+            }
+
+            function bindCurrentDashboards() {
+                when(provider.searchDashboards(), function (dashborads) {
+                    $.each(dashborads, function (index) {
+                        var dashboardLink = createDashboardTab(this);
+                        if (index == 0)
+                            setTimeout(function () {
+                                dashboardLink.css("active");
+                                loadDashboard(dashboardLink);
+                            });
+                    });
+                });
+            }
+
+            function bindDashlets() {
+                when(provider.searchDashletModules(), function (modules) {
+                    var groupedModules = {};
+                    $(modules).each(function (index) {
+                        var groupName = this.metaData.group ? this.metaData.group : "Others";
+                        if (groupedModules[groupName] == undefined)
+                            groupedModules[groupName] = [this];
+                        else groupedModules[groupName].push(this);
+                    });
+
+                    function loadDashlets(link) {
+                        $("#dashletsList").empty();
+                        var group = groupedModules[link.innerHTML];
+                        $(group).each(function (key) {
+                            var newLink = $('<a href="#">' + (this.paneConfig.iconCls ?
+                                '<i class="' + this.paneConfig.iconClass + '"></i>' : '') +
+                                this.title + "</a>");
+                            $(newLink).data("module", this);
+                            $(newLink).click(function () {
+                                var module = $(this).data("module");
+                                var model = new DashletModel({ module: module });
+                                dashboardView.createDashlet(model);
+                                //$("#dashletsDialog").modal("hide");
+                            });
+                            $(newLink).appendTo($("<li></li>").appendTo("#dashletsList"));
+                        });
+                        $(link).tab('show');
+
+                    }
+
+                    for (var g in groupedModules) {
+                        var link = $('<a href="#db' + g + '" data-toggle="tab">' + g + "</a>");
+                        link.click(function () {
+                            loadDashlets(this);
+                        });
+                        var li = $("<li></li>");
+                        link.appendTo(li);
+                        li.appendTo("#dashletsTab");
+                    }
+                    loadDashlets($("#dashletsTab li a").first()[0]);
+                });
+
+            }
+
+            function bindCommands() {
+                $("#deleteDashboardLink").click(function () {
+                    if (dashboardView.isLoaded()) {
+                        var model = dashboardView.model;
+
+                        when(provider.deleteDashboard(model.id), function (result) {
+                            dashboardView.unload();
+                            var linkToRemove, removeIndex, newLink;
+                            $("#dashboardsList li a").each(function (index) {
+                                if ($(this).data("dashboard") && $(this).data("dashboard").id == model.id) {
+                                    linkToRemove = this;
+                                    removeIndex = index;
+                                }
+                            });
+                            if (linkToRemove) {
+                                var parentli = $(linkToRemove).parent();
+                                if (parentli.prev() && parentli.prev().children().data("dashboard"))
+                                    loadDashboard(parentli.prev().children()[0]);
+                                else if (parentli.next() && parentli.next().children().data("dashboard"))
+                                    loadDashboard(parentli.next().children()[0]);
+                                parentli.remove();
+                            }
+                        }, function (err) {
+                            alert("Unable to delete dashboard " + err.message);
+                            console.error(err);
+                        });
+                    }
+                });
+
+                $("#goReadonlyModeLink").click(function () {
+                    dashboardView.set("designMode", DesignMode.none);
+                });
+
+                $("#goEditModeLink").click(function () {
+                    dashboardView.set("designMode", DesignMode.full);
+                });
+
+
+
+                $("#changeLayoutLink").click(function () {
+                    $("#layoutDialog").modal();
+                });
+
+                $("#addDashletsLink").click(function () {
+                    $("#dashletsDialog").show();
+                });
+
+                dashboardView.subscribe("jdash/dashboard/layout/created", function (event) {
+                    if (event.sender == dashboardView) {
+                        var predefLayouts = dashboardView.layout.getPredefinedLayouts();
+                        $("#layoutDiv").empty();
+                        $(predefLayouts).each(function (index) {
+                            $('<div class="predefinedLayout predefinedLayout' + this.id + '"></div').click(function () {
+                                dashboardView.changePredefinedLayout($(this).data("layoutId"));
+                                $("#layoutDialog").modal("hide");
+                            }).data("layoutId", this.id).appendTo("#layoutDiv");
+                        });
+                    }
+                });
+            }
+
+            loadThemes();
+            bindNewDashboardDialog();
+            bindCurrentDashboards();
+            bindDashlets();
+            bindCommands();
+        })
+
+    </script>
+
+</body>
+</html>

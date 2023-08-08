@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="KltAdmin">
+<head>
+    <meta charset="utf-8">
+    <title>Kalitte Dashboard - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="Scripts/dojo/dojo.js"></script>
+    <script src="Scripts/bootstrap/js/jquery.js"></script>
+    <script src="Scripts/bootstrap/js/bootstrap.js"></script>
+    <link href="Scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Scripts/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="Scripts/app/resource/admin.css" rel="stylesheet" />
+    <script src="Scripts/Angular/angular.min.js"></script>
+    <script src="Scripts/angular/ui-bootstrap-tpls-0.2.0.js"></script>
+    <!--<script src="Scripts/Angular/ui-bootstrap-0.1.0.min.js"></script>-->
+    <script src="Scripts/app/admin/KltAdmin.js"></script>
+    <script src="Scripts/app/admin/AuthorizationController.js"></script>
+    <script src="Scripts/app/admin/PaneCommandController.js"></script>
+    <script src="Scripts/app/admin/DashletModuleController.js"></script>
+    <link href="Scripts/jdash/resources/themes/default/main.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="DashletModuleController">
+    
+    <div class="navbar navbar-fixed-top" role="navigation" id="topMenu">
+     
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Dashboard Admin</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="Scripts/app/resource/images/logo.png" /></a>
+            </div>
+            <div class="navbar-collapse collapse top-menu">
+                <ul class="nav navbar-nav ">
+            
+                            
+                 <li>  <a href="#" class="dashletModuleLink" ng-click="toggleModal(true)" data-toggle="modal" data-target="#moduleModal"><i class="glyphicon glyphicon-plus"></i> Create New Module</a></li> 
+                 
+                </ul>
+                <div class="navbar-right">
+                   <input placeholder="Quick Search..." type="text" ng-change="bindItems()" ng-model="searchText" class="form-control search">
+                </div>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+   <div id="commandModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 10000" ng-show="commandModalShow">
+    <form name="commandForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3>Add Custom Commands</h3>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Name" ng-model="command.name">
+                    </div>
+                    <div class="form-group">
+                        <label>Label</label>
+                        <input type="text" class="form-control" placeholder="Label" ng-model="command.label">
+                    </div>
+                    <div class="form-group">
+                        <label>Icon Class</label>
+                        <input type="text" class="form-control" placeholder="Icon Class" ng-model="command.ui.icon">
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" placeholder="Title" name="title" ng-model="command.ui.title" required ng-focus>
+                        <span class="help-block" ng-show="commandForm.title.$error.required&&!commandForm.title.$focused&&commandForm.title.$dirty ">Required!</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="command.confirm">
+                                Ask for command confirmation
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="command.confirm">
+                        <label>Confirm Message</label>
+                        <input type="text" ng-model="command.confirmMessage" class="form-control" placeholder="Confirmation Message">
+                    </div>
+                    <div class="form-group">
+                        <label>Command Type</label>
+                        <select class="form-control" data-ng-model="command.type">
+                            <option value="">Select one</option>
+                            <option  value="builtIn">builtIn</option>
+                            <option value="visualState">visualState</option>
+                            <option value="custom">custom</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="notifyOnCommand">Notify on command
+                            </label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button class="btn btn-primary" ng-click="addCommand(command)" ng-disabled="commandForm.$invalid" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+    <div id="moduleModal" class="modal  fade" ng-show="showModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="toggleModal(false)" aria-hidden="true">×</button>
+                    <h3>{{modalHeader}}</h3>
+                </div>
+                <div class="modal-body">
+                    <form name="myForm">
+                        <fieldset>
+                            <div class="row-fluid">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"   ><a href="#general" data-toggle="tab">General</a></li>
+
+                                    <li ><a href="#paneCommands" data-toggle="tab">Pane Commands</a></li>
+                                    <li ><a href="#dashletConfig" data-toggle="tab">Dashlet Config</a></li>
+                                    <li ><a href="#authorization" data-toggle="tab">Authorization</a></li>
+                                </ul>
+
+                                <!-- Nav tabs -->
+
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="general">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" ng-model="currentModel.title" name="title" placeholder="Title" required ng-focus >
+                                            <span  class="error" ng-show="myForm.title.$dirty && myForm.title.$error.required&&!myForm.title.$focused">
+                                             Required!</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Controller</label>
+                                            <input type="text" class="form-control" ng-model="currentModel.config.mvcConfig.controller" name="controller" placeholder="Controller" required ng-focus>
+                                            <span class="error"  data-ng-show="myForm.controller.$dirty&&myForm.controller.$error.required && !myForm.title.$focused ">
+                                             Required!</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label> Description</label>
+                                            <textarea class="form-control" placeholder="Description" ng-model="currentModel.metaData.description"></textarea>
+                                        </div>
+                                        <div class="form-group" ng-show="!checkCreteGroup">
+                                         <label> Group </label>
+                                        <select data-ng-model="groupName" class="form-control"
+                                                data-ng-options="group for group in groups"> 
+                                                <option value="">Select one</option>               
+                                        </select>
+                                     
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="checkCreteGroup">
+                                                    Create Group
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div ng-show="checkCreteGroup">
+                                            <div class="form-group">
+                                                <label>Group</label>
+                                                <input type="text" class="form-control" ng-model="customgroupName" placeholder="Set Name for New Group" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="useDefaultClientModule"  >
+                                                    Use default client module
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div ng-show="!useDefaultClientModule" >
+                                            <div class="form-group">
+                                                <label>Client Module Path</label>
+                                                <input type="text" class="form-control" ng-model="currentModel.path" placeholder="Client Module Path">
+                                                <br />
+                                                <div class="alert alert-info">
+                                                    <p>File extension defaults to .js and should not be specified in path. See RequireJs paths for more information.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Css Class</label>
+                                            <input type="text" class="form-control" ng-model="currentModel.config.mvcConfig.cssClass" placeholder="Css Class">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>İcon Class</label>
+                                            <input type="text" class="form-control" ng-model="currentModel.config.iconClass" placeholder="Icon Class">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" ng-model="dashletConfigured">
+                                                Dashlet can be configured by end user
+                                            </label>
+                                        </div>
+                                        <div ng-show="dashletConfigured">
+                                             <div class="form-group">
+                                             <hr />
+                                                 <h2>Editor</h2>
+                                                 <br />
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" ng-model="useDefaultEditorClientModule">
+                                                             Use default client module
+                                                        </label>
+                                                    </div>
+                                                 </div>
+                                            <div class="form-group" ng-show="!useDefaultEditorClientModule">
+                                                <label>Path</label>
+                                                <input type="text" class="form-control" ng-model="currentModel.config.editor.path" placeholder="Controller">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="checkbox" >
+                                                    <label>
+                                                        <input type="checkbox" ng-model="currentModel.config.editor.useWindow">
+                                                        Show editor inside window
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Css Class</label>
+                                                <input type="text" class="form-control" ng-model="currentModel.config.editor.cssClass" placeholder="Css Class">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Width</label>
+                                                <input type="text" class="form-control" ng-model="currentModel.config.editor.width" placeholder="Width">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Height</label>
+                                                <input type="text" class="form-control" ng-model="currentModel.config.editor.height" placeholder="Height">
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="currentModel.config.editor.autoOpen">
+                                                    Automatically open editor when new a dashlet is added by user
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="paneCommands">
+                                      <div class="paneCommands">
+                                       
+                                        <div class="pull-left" >
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="dashletMaximize" value="maximize">
+                                                    Dashlet can be maximized over dashboard
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="dashletRefreshed" value="refresh">
+                                                    Content of dashlet can be refreshed
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="dashletRemove" value="remove">
+                                                    Users can remove dashlet
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="dashletClone" value="clone">
+                                                    Users can clone dashlet
+                                                </label>
+                                            </div>
+                                        </div>
+                                      </div>
+                                                                           
+                                                    </div>
+                                                <div class="form-group">
+                    <button class="btn btn-primary" data-toggle="modal" ng-click="clearCommand()" data-target="#commandModal" >Add Command</button></div>
+                <div class="table-responsive">
+                    <table class="table">
+                    <thead>
+                        <th>Title</th>
+                        <th></th>
+ 
+                    </thead>
+                    <tbody>
+                <tr ng-repeat="customCommand in customCommands">
+                    <td>{{customCommand.ui.title}}</td>
+                    <td class="pull-right"> <button class="btn btn-default" data-toggle="modal" data-target="#commandModal" ng-click="addPaneCommands(customCommand)">Edit</button> 
+                        <button class="btn btn-danger" data-toggle="modal" ng-click="removeCustomCommand(customCommand)" >Remove</button></td>
+           
+                </tr>
+            </tbody>
+        </table>
+            </div>
+
+                                            </div>
+                                            <div class="tab-pane" id="dashletConfig">
+
+                                                <div class="form-group">
+                                                    <label>Dashlet Config</label>
+                                                    <textarea class="form-control" ng-model="currentModel.dashletConfig" placeholder="Dashlet Config" ng-click="removeCustomCommand()"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="authorization">
+                                               <div id="Authentication">
+                                               <div data-ng-include data-src="'Partials/Authentication.html'"></div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <span class="label label-important" ng-class="feedBackClass">{{feedBackMessage}}</span>
+                            <button class="btn btn-default" data-dismiss="modal" ng-click="toggleModal(false)" aria-hidden="true">Close</button>
+                            <button class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="save()" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+        
+                <h1>{{title}}</h1>
+                            <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th class="col-sm-2">Title</th>
+                    <th class="col-sm-3">Client Module</th>
+                    <th class="col-sm-3">Controller</th>
+
+                    <th class="col-sm-3"><select  class="form-control searchGroup" ng-change="bindItems()"   ng-model="searchGroup" >
+                                        <option value="" selected>All Group</option>
+                                                        <option ng-repeat='group in groups', value='{{group}}'>{{group}}</option>
+                                                    </select></th>
+                </tr>
+            </thead>
+        <tbody>
+
+                                <tr ng-repeat="item in items |  filter:filterByGroup " ng-class-odd="'odd'" ng-class-even="'even'" class="listItem" >
+                                    <td>{{item.title}}</td>
+                                    <td> {{item.path}}
+                                    </td>
+                                    <td>{{item.config.mvcConfig.controller}}</td>
+                                    <td>
+                                        <div class="module-commands">
+                                        <button type="button" class="btn btn-default" ng-click="upateModule(item,false)" data-toggle="modal" data-target="#moduleModal"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                         <button type="button" class="btn btn-default" ng-click="delete(item)"><span class="glyphicon glyphicon-remove"></span>Delete</button>
+                                         <button type="button" class="btn btn-default" ng-click="upateModule(item,true)"  data-toggle="modal" data-target="#moduleModal"><span class="glyphicon glyphicon-share"  ></span>Copy</button>
+                                   </div>
+                                             </td>
+                                    <td></td>
+                                </tr>
+             </tbody>
+                            </table>
+
+              
+            
+          
+
+            <pagination on-select-page="bindItems(page)" num-pages="pager.noOfPages" current-page="pager.currentPage"></pagination>
+      
+
+    </div>
+</body>
+</html>
+<!--  -->

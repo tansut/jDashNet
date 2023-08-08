@@ -1,0 +1,37 @@
+﻿@using JDash.Mvc
+
+@{
+    ViewBag.Title = "JDash App";
+
+
+
+    foreach (var module in ViewBag.DashletModules)
+    {
+        using (Html.JDash().DashletModulesContainer().Tag("ul").Content())
+        {
+            @(Html.JDash().DashletCreateLink()
+                                .Tag("div")
+                                .Module(module.id)
+                                .InnerText(module.title)
+                                .DashboardView("myDashboard")
+                                .Behaviour(DashletCreateBehaviour.Both)
+                                .Render());
+                }
+    }
+
+    
+    @(Html.JDash().DashboardView()
+           .ID("myDashboard")
+           .DesignMode(DashboardDesignMode.full)
+           .Load(ViewBag.CurrentDashboard)
+           .Render());
+    
+    
+    @(Html.JDash().ResourceManager()
+        .Theme("flat")
+        .Style("w")
+        .CookieForTheme(true)
+        .ClientInitHandler("window.runApp && window.runApp();")
+        .Render())
+    
+}

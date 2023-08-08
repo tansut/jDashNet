@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E650CA99-D900-4410-B18A-D591B53F5157}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JDash.Webform.Management</RootNamespace>
+    <AssemblyName>JDash.Webform.Management</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JDash, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.MySqlProvider">
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.MySqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.SqlProvider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.SqlProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JDash.WebForms, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b5fa106e3affb7e3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\JDash.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JDash.WebForms.Demo.Reference\MySql.Data.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\JDash.WebForms.Demo.Reference\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\WorkInProgress.gif" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Controls\Common\AuthenticationEditor.ascx" />
+    <Content Include="Controls\Common\MetadataEditor.ascx" />
+    <Content Include="Controls\Common\TagEditor.ascx" />
+    <Content Include="Controls\Common\TagItemEditor.ascx" />
+    <Content Include="Controls\Dashboard\DashboardEditor.ascx" />
+    <Content Include="Controls\DashletModule\DashletCommandEditor.ascx" />
+    <Content Include="Controls\DashletModule\DashletModuleEditor.ascx" />
+    <Content Include="Core\Controls\UI\JDashChekBoxGroup.ascx" />
+    <Content Include="Core\Controls\UI\JDashLabeledDropDown.ascx" />
+    <Content Include="Core\Controls\UI\JDashLabeledTextBox.ascx" />
+    <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\JDash.WebForm.Management.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Pages\Dashboard\Dashboard.aspx" />
+    <Content Include="Pages\DashletModule\DashletModule.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Global.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Global.tr-tr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.tr-tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\AuthenticationEditor.ascx.cs">
+      <DependentUpon>AuthenticationEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\AuthenticationEditor.ascx.designer.cs">
+      <DependentUpon>AuthenticationEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\BaseEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\MetadataEditor.ascx.cs">
+      <DependentUpon>MetadataEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\MetadataEditor.ascx.designer.cs">
+      <DependentUpon>MetadataEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\TagEditor.ascx.cs">
+      <DependentUpon>TagEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\TagEditor.ascx.designer.cs">
+      <DependentUpon>TagEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\TagItemEditor.ascx.cs">
+      <DependentUpon>TagItemEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\TagItemEditor.ascx.designer.cs">
+      <DependentUpon>TagItemEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dashboard\DashboardEditor.ascx.cs">
+      <DependentUpon>DashboardEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Dashboard\DashboardEditor.ascx.designer.cs">
+      <DependentUpon>DashboardEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DashletModule\DashletCommandEditor.ascx.cs">
+      <DependentUpon>DashletCommandEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DashletModule\DashletCommandEditor.ascx.designer.cs">
+      <DependentUpon>DashletCommandEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DashletModule\DashletModuleEditor.ascx.cs">
+      <DependentUpon>DashletModuleEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DashletModule\DashletModuleEditor.ascx.designer.cs">
+      <DependentUpon>DashletModuleEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Controls\DataEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashBaseLabeledItem.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashButton.cs" />
+    <Compile Include="Core\Controls\UI\JDashChekBoxGroup.ascx.cs">
+      <DependentUpon>JDashChekBoxGroup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashChekBoxGroup.ascx.designer.cs">
+      <DependentUpon>JDashChekBoxGroup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashDropDown.cs" />
+    <Compile Include="Core\Controls\UI\JDashLabeledDropDown.ascx.cs">
+      <DependentUpon>JDashLabeledDropDown.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashLabeledDropDown.ascx.designer.cs">
+      <DependentUpon>JDashLabeledDropDown.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashLabeledTextBox.ascx.cs">
+      <DependentUpon>JDashLabeledTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashLabeledTextBox.ascx.designer.cs">
+      <DependentUpon>JDashLabeledTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Controls\UI\JDashPager.cs" />
+    <Compile Include="Core\Controls\UI\JDashTextBox.cs" />
+    <Compile Include="Core\Model\EditMode.cs" />
+    <Compile Include="Core\Provider\ProviderManager.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Management.Master.cs">
+      <DependentUpon>Management.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Management.Master.designer.cs">
+      <DependentUpon>Management.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dashboard\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dashboard\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DashletModule\DashletModule.aspx.cs">
+      <DependentUpon>DashletModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DashletModule\DashletModule.aspx.designer.cs">
+      <DependentUpon>DashletModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\Management.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\Dashboard\App_LocalResources\Dashboard.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\Dashboard\App_LocalResources\Dashboard.aspx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\DashletModule\App_LocalResources\DashletModule.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\DashletModule\App_LocalResources\DashletModule.aspx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Global.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Global.tr-tr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.tr-tr.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\DashletModule\App_LocalResources\DashletModuleEditor.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\MetadataEditor.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\MetadataEditor.ascx.tr-tr.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\TagEditor.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\TagEditor.ascx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\TagItemEditor.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\TagItemEditor.ascx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Dashboard\App_LocalResources\DashboardEditor.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Dashboard\App_LocalResources\DashboardEditor.ascx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\DashletModule\App_LocalResources\DashletModuleEditor.ascx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\DashletModule\App_LocalResources\DashletCommandEditor.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\DashletModule\App_LocalResources\DashletCommandEditor.ascx.tr-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\AuthenticationEditor.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Common\App_LocalResources\AuthenticationEditor.ascx.tr-tr.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10912</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9176/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

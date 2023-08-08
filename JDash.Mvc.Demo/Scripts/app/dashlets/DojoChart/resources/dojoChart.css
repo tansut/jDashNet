@@ -1,0 +1,153 @@
+﻿.dojoxLegendNode {
+	background-color:#F7F7F7;
+	border:1px solid #CCCCCC;
+	margin:0;
+	padding:0;	
+}
+.dojoxLegendNode .dijitCheckBox  {
+    float:left;
+}
+.dojoxLegendNode td {
+    width:150px;
+}
+.dojoxLegendNode td{
+	padding: 6px 4px 6px 6px;
+}
+.dojoxLegendIcon {
+	padding: 0px;
+	margin: 0 2px 0 4px;
+}
+.dojoxLegendIcon div{
+	float: left;
+}
+.dj_ie .dojoxLegendNode td{
+	padding: 5px;	
+}
+.dj_ie .dojoxLegendIcon {
+	padding: 0px;
+	margin: 0 2px 0 5px;
+	vertical-align: middle;
+}
+
+.dojoxLegendItem{
+		padding: 3px 5px 2px 5px;
+	}
+	.dojoxLegendItem .dojoxLegendText{
+		float: right;
+		margin-top: 2px;
+	}
+	.dojoxLegendItem .dojoxLegendIcon{
+		float: left;
+	}
+	.dojoxLegendItemRtl{
+		padding: 3px 5px 2px 5px;
+	}
+	.dojoxLegendItemRtl .dojoxLegendText{
+		float: left;
+		margin-top: 2px;
+	}
+	.dojoxLegendItemRtl .dojoxLegendIcon{
+		float: right;
+	}
+	.dojoxLegendHover{
+		background-color: #afd9ff;
+		cursor: pointer;
+		padding: 3px 5px 2px 5px;
+	}
+	.dojoxLegendActive{
+		cursor: pointer;
+		border: 2px solid #7dbefa;
+		padding: 1px 3px 0 3px;
+	}
+
+
+    
+    		.dojoxTreeMap {
+			font-family: Geneva, Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			text-align: center;
+			background: none;
+		}
+
+		.dojoxTreeMapLeaf {
+			-webkit-border-radius: 15px 15px;
+			-moz-border-radius: 15px 15px;
+			border-radius: 15px 15px;
+			margin: 1px;
+		}
+
+		.dojoxTreeMapHeader {
+			text-align: center;
+			-webkit-border-radius: 15px 15px;
+			-moz-border-radius: 15px 15px;
+			border-radius: 15px 15px;
+			background:  #0B8CD4;
+		}
+        
+        
+        .dojoxTreeMap {
+	background-color: #EBEADB;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+.dojoxTreeMapLeaf {
+	border: 1px solid black;
+	padding: 3px;
+}
+.dojoxTreeMapGroup {
+}
+.dojoxTreeMapGroupContent {
+}
+.dojoxTreeMapHeader {
+	background-color: white;
+	border: 1px solid black;
+}
+.dojoxTreeMapLeaf.dojoxTreeMapHovered {
+	border-color: white;
+}
+.dojoxTreeMapGroup.dojoxTreeMapHovered {
+}
+.dojoxTreeMapSelected {
+	border-color: red;
+}
+.dojoxTreeMapSelected:before {
+	content: '';
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	border: 3px dashed red;
+	pointer-events: none;
+	z-index: 20;
+}
+.dojoxTreeMapGroup.dojoxTreeMapSelected:before {
+	content: '';
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	border: 1px solid red;
+	pointer-events: none;
+	z-index: 20;
+}
+.dojoxTreeMapSelected:before {
+	content: '';
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	border: 2px dashed white;
+	pointer-events: none;
+	z-index: 20;
+}
+.dojoxTreeMapGroup.dojoxTreeMapSelected{
+	border:2px dashed red;
+}
+.dj_iequircks .dojoxTreeMapIEHack.dojoxTreeMapSelected,
+.dj_ie7 .dojoxTreeMapIEHack.dojoxTreeMapSelected + div,
+.dj_ie8 .dojoxTreeMapIEHack.dojoxTreeMapSelected + div {
+	border:  1px solid red;
+	z-index: 20;
+}

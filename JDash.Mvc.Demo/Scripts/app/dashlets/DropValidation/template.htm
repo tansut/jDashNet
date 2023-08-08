@@ -1,0 +1,27 @@
+﻿<div>
+    <h1 class="inline">Disable drop</h1>
+    <input type="checkbox" name="disableDrop" data-dojo-attach-point="disableDrop" />
+    <p>Check to disable dropping of all dashlets in this dashboard.</p>
+    <h1 class="inline">Make sticky</h1>
+    <input type="checkbox" name="makeSticky" data-dojo-attach-point="makeSticky" data-dojo-attach-event="onchange: _stickChange" />
+    <p>
+        When a dashlet is marked as <i>Sticky</i>, users cannot drag dashlet and dropping
+        of other dashlets in front of stricky dashlet is disabled.
+    </p>
+    <p>
+        This can be very handy for your dashlets you want to mention to the user.
+    </p>
+        <h1>Track events</h1>
+    <p>
+        To have a try, drag a dashlet. Events will be logged below automatically.
+    </p>
+    <p>
+        Events also include current and target position of dragged dashlet, which lets you
+        to have full control over the operation. You can cancel dragging by setting Cancel
+        property of event.
+    </p>
+    <div data-dojo-attach-point="eventTracker" class="eventTracker">
+    </div>
+    <h3 data-dojo-attach-event="onclick:_viewSource" class="viewSource">View Source code
+    </h3>
+</div>

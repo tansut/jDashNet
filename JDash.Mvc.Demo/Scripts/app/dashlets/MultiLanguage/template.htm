@@ -1,0 +1,116 @@
+﻿<div>
+    <span data-dojo-attach-point="sampleTextSpn"><b>${sampleText}</b></span>
+    <br />
+    <select data-dojo-attach-point="languageSlc" data-dojo-attach-event="onchange: changeLanguage">
+        <option value="0">${selectALanguage}</option>
+        <option value="en">${english}</option>
+        <option value="de">${german}</option>
+        <option value="tr">${turkish}</option>
+    </select>
+    <hr />
+    <p>
+        Dashboard supports multiple languages. Deveplopers can define various language packs.
+        Dashboard finds correct language pack automatically  by using browsers locale definitions.
+        Also a specific language pack can be set programmatically. 
+    </p>
+    <br />
+    <p>
+        A language pack contains a root definition file. For example it is named "language.js".
+    </p>
+    <br />
+    <pre class="prettyprint">
+    define({
+        root: {       
+            sampleText: "Hello World!",
+            turkish: "Turkish",
+            english: "English",
+            german: "German",
+            selectALanguage:"Select a language"
+        },
+        de:true,
+        tr: true
+    });
+    </pre>
+    <br />
+    <p>
+        It works in key-value concept and these are the default values. This file tells
+        dashboard that two other language packs also exist in "de" and "tr". Each one of
+        them are under 
+        "tr" and "de" folders with same name of root definition file. Like "tr/language.js"
+        and "de/language.js". They also have same keys as root definition with their custom
+        values.
+        <br />
+        <br />        
+        <img style="margin-left:150px" src="/Scripts/app/dashlets/MultiLanguage/resources/lang.PNG" />
+        <br />
+        <br />
+        Here is "tr" pack:
+    </p>
+    <br />
+    <pre class="prettyprint">
+    define({
+        sampleText: "Merhaba Dünya!",
+        turkish: "Türkçe",
+        english: "İngilizce",
+        german:"Almanca",
+        selectALanguage:"Bir dil seçin"
+    });
+    </pre>
+    <br />
+    <br />
+    <p>
+        Once you have prepared your definitions you will need to include them in your code.
+        Dashboard uses dojo i18n liblary for multilanguage operations. 
+        For this, include your language defination in following format:<br />
+        "dojo/i18n!{your_root_language_defination_file_path}"
+        <br />
+        You don't need require all sub language packages.
+         Just root file is fine, dashboard handles the rest. In our example  after root
+        language.js file required as "language"  you can use keys like this:
+    </p>
+    <br />
+    <pre class="prettyprint">
+    define([
+            "dojo/i18n!./resources/nls/language",
+            'dojo/_base/declare',
+            'dojo/_base/lang',
+            'dojo/text!./template.htm',
+            'dijit/_WidgetBase',
+            'dijit/_TemplatedMixin',
+            'dijit/_WidgetsInTemplateMixin',
+            'app/ViewSourceDialog',
+            'require'
+    ],
+    function (language,declare, lang, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixIn,  Dialog, require) {
+        return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixIn], {
+            templateString: template,
+
+            constructor: function () {            
+                this.sampleText = language.sampleText;
+                this.turkish = language.turkish;
+                this.english = language.english;
+                this.german = language.german;
+                this.selectALanguage = language.selectALanguage;
+                this.inherited(arguments);
+            }
+        });
+    });
+    </pre>
+    <br />
+    And you can use these variables in your template like this.  
+    <br />
+    <br />
+    <pre class="prettyprint">
+    &lt;span data-dojo-attach-point="sampleTextSpn"&gt;&lt;b&gt;$&#123;sampleText&#125;&lt;/b&gt;&lt;/span&gt;
+    &lt;br /&gt;
+    &lt;select data-dojo-attach-point="languageSlc" data-dojo-attach-event="onchange: changeLanguage"&gt;
+        &lt;option value="0"&gt;$&#123;selectALanguage&#125;&lt;/option&gt;
+        &lt;option value="en"&gt;$&#123;english&#125;&lt;/option&gt;
+        &lt;option value="de"&gt;$&#123;german&#125;&lt;/option&gt;      
+        &lt;option value="tr"&gt;$&#123;turkish&#125;&lt;/option&gt;
+    &lt;/select&gt;
+    </pre>
+    <br />
+    <h3 data-dojo-attach-event="onclick:_viewSource" class="viewSource">View Source code
+    </h3>
+</div>

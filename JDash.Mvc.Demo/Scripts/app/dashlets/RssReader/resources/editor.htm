@@ -1,0 +1,34 @@
+﻿<div>
+    <form>
+    <p>
+        <span data-dojo-attach-point="dashletTitleNode"></span>
+    </p>
+
+    <p>
+        <span data-dojo-attach-point="dashletStylesNode"></span>
+    </p>
+
+    <p>
+        <input placeholder="RSS Url" type="text" name="rssUrl" data-dojo-attach-point="rssUrl" />
+    </p>
+    <p>
+        <label for="viewMode">${viewMode}</label>
+        <select name="viewMode" data-dojo-attach-point="viewMode" data-dojo-attach-event="onchange: _viewModeChanged">
+            <option value="headersOnly">${ShowHeadersOnly}</option>
+            <option value="fullContent">${ShowFullContent}</option>
+            <option value="contentSnippet">${ShowContentSummary}</option>
+        </select>
+    </p>
+    <p>
+        <label for="feedCount">${LimitFeeds}</label>
+        <select name="feedCount" data-dojo-attach-point="feedCount" data-dojo-attach-event="onchange: _feedCountChanged">
+            <option value="0">${Unlimited}</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </p>
+    </form>
+</div>

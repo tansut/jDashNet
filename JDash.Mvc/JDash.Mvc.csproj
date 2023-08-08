@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CC1697B-2D6D-49B8-BB95-6F87D44BE94F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JDash.Mvc</RootNamespace>
+    <AssemblyName>JDash.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;REGISTERED_VERSION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\PreDeploy\</OutputPath>
+    <DefineConstants>TRACE;REGISTERED_VERSION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ApiHandler.cs" />
+    <Compile Include="Core\App.cs" />
+    <Compile Include="Core\ConfigResult.cs" />
+    <Compile Include="Core\ControllerBase.cs" />
+    <Compile Include="Core\JsonNetResult.cs" />
+    <Compile Include="Core\Licensing.cs" />
+    <Compile Include="Core\NlsHandler.cs" />
+    <Compile Include="Design\Util.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Helpers\ContentFor.cs" />
+    <Compile Include="Helpers\DashboardLoadLink.cs" />
+    <Compile Include="Helpers\DashboardTitle.cs" />
+    <Compile Include="Helpers\DashboardView.cs" />
+    <Compile Include="Helpers\DashletControl.cs" />
+    <Compile Include="Helpers\DashletCreateLink.cs" />
+    <Compile Include="Helpers\DashletCssEditor.cs" />
+    <Compile Include="Helpers\DashletModulesContainer.cs" />
+    <Compile Include="Helpers\DashletStylesList.cs" />
+    <Compile Include="Helpers\DashletTitleEditor.cs" />
+    <Compile Include="Helpers\DomElement.cs" />
+    <Compile Include="Helpers\JDashBuilder.cs" />
+    <Compile Include="Helpers\LoadDashboardLink.cs" />
+    <Compile Include="Helpers\ResourceManager.cs" />
+    <Compile Include="Helpers\ThemeChangeLink.cs" />
+    <Compile Include="Helpers\ThemeStylesList.cs" />
+    <Compile Include="Helpers\Widget.cs" />
+    <Compile Include="api\JDashControllerBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\InsertOrderedDictionary.cs" />
+    <Compile Include="Util\Utils.cs" />
+    <Compile Include="Util\ViewRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JDash.Core\JDash.csproj">
+      <Project>{115849a5-2148-4308-9d86-3b3bb02f43d2}</Project>
+      <Name>JDash</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Build\BuildResources.bat" />
+    <None Include="Key.snk" />
+    <EmbeddedResource Include="resources\nls\jdash_ar.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_az.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_ca.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_cs.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_da.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_de.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_el.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_es.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_fi.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_fr.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_he.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_hr.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_hu.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_it.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_ja.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_kk.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_ko.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_nb.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_nl.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_pl.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_pt-pt.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_pt.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_ro.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_ROOT.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_ru.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_sk.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_sl.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_sv.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_th.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_tr.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_zh-tw.js.map" />
+    <EmbeddedResource Include="resources\nls\jdash_zh.js.map" />
+    <EmbeddedResource Include="resources\nls\language.js.map" />
+    <EmbeddedResource Include="resources\nls\tr\language.js.map" />
+    <EmbeddedResource Include="resources\themes\default\css\animate.less" />
+    <EmbeddedResource Include="resources\themes\default\main.less" />
+    <EmbeddedResource Include="resources\themes\flat\css\animate.less" />
+    <EmbeddedResource Include="resources\themes\flat\css\font-awesome.less" />
+    <EmbeddedResource Include="resources\themes\flat\fonts\fontawesome-webfont.eot" />
+    <EmbeddedResource Include="resources\themes\flat\fonts\fontawesome-webfont.ttf" />
+    <EmbeddedResource Include="resources\themes\flat\fonts\fontawesome-webfont.woff" />
+    <EmbeddedResource Include="resources\themes\flat\fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="resources\themes\flat\main.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\css\layout\builtin-embedded.css" />
+    <EmbeddedResource Include="resources\css\layout\builtin.css" />
+    <EmbeddedResource Include="resources\css\layout\layoutall.png" />
+    <EmbeddedResource Include="resources\jdash.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ar.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ar.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_az.js" />
+    <EmbeddedResource Include="resources\nls\jdash_az.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ca.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ca.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_cs.js" />
+    <EmbeddedResource Include="resources\nls\jdash_cs.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_da.js" />
+    <EmbeddedResource Include="resources\nls\jdash_da.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_de.js" />
+    <EmbeddedResource Include="resources\nls\jdash_de.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_el.js" />
+    <EmbeddedResource Include="resources\nls\jdash_el.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_es.js" />
+    <EmbeddedResource Include="resources\nls\jdash_es.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_fi.js" />
+    <EmbeddedResource Include="resources\nls\jdash_fi.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_fr.js" />
+    <EmbeddedResource Include="resources\nls\jdash_fr.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_he.js" />
+    <EmbeddedResource Include="resources\nls\jdash_he.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_hr.js" />
+    <EmbeddedResource Include="resources\nls\jdash_hr.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_hu.js" />
+    <EmbeddedResource Include="resources\nls\jdash_hu.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_it.js" />
+    <EmbeddedResource Include="resources\nls\jdash_it.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ja.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ja.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_kk.js" />
+    <EmbeddedResource Include="resources\nls\jdash_kk.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ko.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ko.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_nb.js" />
+    <EmbeddedResource Include="resources\nls\jdash_nb.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_nl.js" />
+    <EmbeddedResource Include="resources\nls\jdash_nl.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_pl.js" />
+    <EmbeddedResource Include="resources\nls\jdash_pl.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_pt-pt.js" />
+    <EmbeddedResource Include="resources\nls\jdash_pt-pt.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_pt.js" />
+    <EmbeddedResource Include="resources\nls\jdash_pt.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ro.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ro.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ROOT.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ROOT.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ru.js" />
+    <EmbeddedResource Include="resources\nls\jdash_ru.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_sk.js" />
+    <EmbeddedResource Include="resources\nls\jdash_sk.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_sl.js" />
+    <EmbeddedResource Include="resources\nls\jdash_sl.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_sv.js" />
+    <EmbeddedResource Include="resources\nls\jdash_sv.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_th.js" />
+    <EmbeddedResource Include="resources\nls\jdash_th.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_tr.js" />
+    <EmbeddedResource Include="resources\nls\jdash_tr.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_zh-tw.js" />
+    <EmbeddedResource Include="resources\nls\jdash_zh-tw.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\jdash_zh.js" />
+    <EmbeddedResource Include="resources\nls\jdash_zh.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\language.js" />
+    <EmbeddedResource Include="resources\nls\language.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\nls\tr\language.js" />
+    <EmbeddedResource Include="resources\nls\tr\language.js.uncompressed.js" />
+    <EmbeddedResource Include="resources\themes\default\css\animate-embedded.css" />
+    <EmbeddedResource Include="resources\themes\default\css\animate.css" />
+    <EmbeddedResource Include="resources\themes\default\images\icons-18-black-pack.png" />
+    <EmbeddedResource Include="resources\themes\default\images\icons-18-white-pack.png" />
+    <EmbeddedResource Include="resources\themes\default\images\icons-36-black-pack.png" />
+    <EmbeddedResource Include="resources\themes\default\images\icons-36-white-pack.png" />
+    <EmbeddedResource Include="resources\themes\default\images\ui-icon-busy.gif" />
+    <EmbeddedResource Include="resources\themes\default\main-embedded.css" />
+    <EmbeddedResource Include="resources\themes\default\main.css" />
+    <EmbeddedResource Include="resources\themes\flat\css\animate-embedded.css" />
+    <EmbeddedResource Include="resources\themes\flat\css\animate.css" />
+    <EmbeddedResource Include="resources\themes\flat\css\font-awesome-embedded.css" />
+    <EmbeddedResource Include="resources\themes\flat\css\font-awesome.css" />
+    <EmbeddedResource Include="resources\themes\flat\css\font-awesome.min-embedded.css" />
+    <EmbeddedResource Include="resources\themes\flat\css\font-awesome.min.css" />
+    <EmbeddedResource Include="resources\themes\flat\fonts\fontawesome-webfont.svg" />
+    <EmbeddedResource Include="resources\themes\flat\images\ui-icon-busy.gif" />
+    <EmbeddedResource Include="resources\themes\flat\main-embedded.css" />
+    <EmbeddedResource Include="resources\themes\flat\main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\jdash_compressed.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>rem REGISTERED_VERSION</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>rem $(ProjectDir)\Build\BuildResources.bat</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
